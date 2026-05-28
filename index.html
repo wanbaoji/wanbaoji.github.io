@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#FDF6F8;--strawberry:#FFB3C6;--strawberry-soft:#FFE0E9;--mint:#B8E8D0;--mint-soft:#DEF5E9;--lavender:#D4C5F9;--lavender-soft:#ECE4FB;--butter:#FFE89C;--butter-soft:#FFF6CC;--sky:#BDE0FE;--sky-soft:#E0EFFF;--peach:#FFCAA8;--peach-soft:#FFE6D4;--ink:#3D3852;--ink-mid:#5E5572;--ink-soft:#8B85A0;--glass:rgba(255,255,255,.56);--glass-strong:rgba(255,255,255,.78);--glass-border:rgba(255,255,255,.72);--glass-shadow:0 8px 32px rgba(94,85,114,.08),0 2px 8px rgba(94,85,114,.04)}*{box-sizing:border-box;margin:0;padding:0}body{min-height:100vh;background:var(--bg);color:var(--ink);font-family:"Noto Serif SC","Songti SC",serif;line-height:1.74;overflow-x:hidden}.blob{position:fixed;border-radius:50%;filter:blur(90px);opacity:.66;pointer-events:none;z-index:0;animation:drift 24s ease-in-out infinite}.b1{top:-8%;left:-6%;width:520px;height:520px;background:var(--strawberry)}.b2{top:26%;right:-10%;width:620px;height:620px;background:var(--mint)}.b3{bottom:12%;left:16%;width:460px;height:460px;background:var(--lavender)}.b4{top:58%;left:-8%;width:420px;height:420px;background:var(--butter)}.b5{bottom:-10%;right:8%;width:540px;height:540px;background:var(--sky)}.b6{top:40%;left:38%;width:380px;height:380px;background:var(--peach);opacity:.5}@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,25px) scale(.97)}}body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.38;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.55 0 0 0 0 0.7 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}.page{max-width:1240px;margin:0 auto;padding:56px 36px 80px;position:relative;z-index:2}.glass{background:var(--glass);border:1px solid var(--glass-border);border-radius:28px;box-shadow:var(--glass-shadow);backdrop-filter:blur(24px) saturate(160%)}.mast{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:32px 40px;margin-bottom:24px}.mast small{font-family:"Plus Jakarta Sans",sans-serif;font-size:12px;letter-spacing:.22em;color:var(--ink-soft);text-transform:uppercase;font-weight:600}.mast small:last-child{text-align:right}.title{font-weight:900;font-size:clamp(58px,8vw,88px);line-height:1;letter-spacing:.04em;text-align:center;background:linear-gradient(135deg,#6B5B95 0%,#FFB3C6 50%,#B8E8D0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}.title i{display:block;font-family:"Fraunces",serif;font-style:italic;font-weight:500;font-size:20px;letter-spacing:.32em;margin-top:14px;color:var(--ink-mid);-webkit-text-fill-color:var(--ink-mid)}.date{display:flex;justify-content:center;align-items:center;gap:18px;font-family:"Plus Jakarta Sans",sans-serif;font-size:13px;letter-spacing:.22em;color:var(--ink-soft);padding:14px 24px;margin-bottom:40px;font-weight:600}.date:before,.date:after{content:"";width:6px;height:6px;border-radius:50%;background:var(--strawberry)}.lead{display:grid;grid-template-columns:2fr 1fr;gap:28px;margin-bottom:34px}.main{padding:44px 48px;position:relative;overflow:hidden;cursor:pointer;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}.main:hover,.brief:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(94,85,114,.12)}.main:before{content:"";position:absolute;top:-40px;right:-40px;width:220px;height:220px;background:radial-gradient(circle,var(--strawberry) 0%,transparent 70%);opacity:.4}.main span,.brief span{display:inline-block;font-family:"Plus Jakarta Sans",sans-serif;font-size:11px;letter-spacing:.16em;color:var(--ink);font-weight:700;padding:5px 14px;border-radius:999px;margin-bottom:14px;background:var(--butter-soft)}.main h1{font-weight:800;font-size:clamp(31px,4vw,44px);line-height:1.24;margin-bottom:22px}.main p{font-size:16px;line-height:1.95;color:var(--ink-mid);text-indent:2em}.byline{font-family:"Fraunces",serif;font-style:italic;font-size:13px;color:var(--ink-soft);margin-top:22px}.side,.grid{display:grid;gap:22px}.brief{padding:26px 28px;position:relative;overflow:hidden;cursor:pointer;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}.brief:nth-child(4n+1) span{background:var(--mint-soft)}.brief:nth-child(4n+2) span{background:var(--lavender-soft)}.brief:nth-child(4n+3) span{background:var(--sky-soft)}.brief:nth-child(4n) span{background:var(--peach-soft)}.brief:before{content:"";position:absolute;bottom:-36px;left:-36px;width:140px;height:140px;border-radius:50%;background:var(--mint);opacity:.26}.brief:nth-child(2n):before{background:var(--lavender)}.brief h4{font-weight:700;font-size:18px;line-height:1.45;margin-bottom:10px}.brief p{font-size:14px;line-height:1.85;color:var(--ink-mid)}.section{margin-top:56px}.section-head{display:flex;align-items:center;gap:18px;margin-bottom:28px;padding:0 8px}.section-head b{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;font-family:"Fraunces",serif;font-style:italic;font-size:17px;font-weight:700;background:var(--mint-soft);color:#2D7A56;flex-shrink:0}.section:nth-of-type(4n+1) .section-head b{background:var(--peach-soft);color:#B6582A}.section:nth-of-type(4n+2) .section-head b{background:var(--sky-soft);color:#2A6BB6}.section:nth-of-type(4n+3) .section-head b{background:var(--lavender-soft);color:#5B3FA8}.section-head h3{font-weight:800;font-size:32px;letter-spacing:.12em}.section-head em{font-family:"Fraunces",serif;font-style:italic;color:var(--ink-soft);font-size:15px;margin-left:auto}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.numbers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:12px 0 8px}.number{border-radius:24px;padding:24px 26px;overflow:hidden;position:relative}.number:after{content:"";position:absolute;right:-34px;top:-34px;width:120px;height:120px;border-radius:50%;background:var(--sky);opacity:.35}.number span,.number em{display:block;color:var(--ink-soft);font-family:"Plus Jakarta Sans",sans-serif;font-size:12px;line-height:1.4}.number strong{display:block;font-family:"Fraunces",serif;font-size:36px;line-height:1.2;margin:6px 0}.modal{position:fixed;inset:0;background:rgba(48,43,64,.36);display:none;align-items:center;justify-content:center;padding:24px;z-index:10}.modal.open{display:flex}.panel{max-width:760px;max-height:86vh;overflow:auto;border-radius:28px;padding:34px;background:var(--glass-strong);border:1px solid var(--glass-border);box-shadow:0 30px 80px rgba(61,56,82,.22);backdrop-filter:blur(26px) saturate(160%)}.panel span{display:inline-block;background:var(--strawberry-soft);border-radius:999px;padding:6px 14px;font-family:"Plus Jakarta Sans",sans-serif;font-size:12px;letter-spacing:.12em;font-weight:700}.panel h2{margin:14px 0 16px;font-size:28px;line-height:1.35}.panel p{color:var(--ink-mid);margin-top:12px;font-size:15px;line-height:1.9}.actions{display:flex;gap:12px;margin-top:24px}.actions a,.actions button{border:1px solid var(--glass-border);background:rgba(255,255,255,.72);border-radius:999px;padding:10px 20px;color:var(--ink);text-decoration:none;cursor:pointer;font-weight:700;font-size:14px}.actions a{background:linear-gradient(135deg,var(--strawberry-soft),var(--sky-soft))}@media(max-width:820px){.page{padding:28px 16px 52px}.mast{grid-template-columns:1fr;padding:24px 20px}.mast small,.mast small:last-child{text-align:center}.lead,.grid,.numbers{grid-template-columns:1fr}.main{padding:30px 26px}.section-head{align-items:flex-start}.section-head h3{font-size:28px}.section-head em{display:none}.title i{font-size:14px}.panel{padding:24px 20px}}
+:root{--bg:#FDF6F8;--strawberry:#FFB3C6;--strawberry-soft:#FFE0E9;--mint:#B8E8D0;--mint-soft:#DEF5E9;--lavender:#D4C5F9;--lavender-soft:#ECE4FB;--butter:#FFE89C;--butter-soft:#FFF6CC;--sky:#BDE0FE;--sky-soft:#E0EFFF;--peach:#FFCAA8;--peach-soft:#FFE6D4;--ink:#3D3852;--ink-mid:#5E5572;--ink-soft:#8B85A0;--glass:rgba(255,255,255,.56);--glass-strong:rgba(255,255,255,.78);--glass-border:rgba(255,255,255,.72);--glass-shadow:0 8px 32px rgba(94,85,114,.08),0 2px 8px rgba(94,85,114,.04)}*{box-sizing:border-box;margin:0;padding:0}body{min-height:100vh;background:var(--bg);color:var(--ink);font-family:"Noto Serif SC","Songti SC",serif;line-height:1.74;overflow-x:hidden}.blob{position:fixed;border-radius:50%;filter:blur(90px);opacity:.66;pointer-events:none;z-index:0;animation:drift 24s ease-in-out infinite}.b1{top:-8%;left:-6%;width:520px;height:520px;background:var(--strawberry)}.b2{top:26%;right:-10%;width:620px;height:620px;background:var(--mint)}.b3{bottom:12%;left:16%;width:460px;height:460px;background:var(--lavender)}.b4{top:58%;left:-8%;width:420px;height:420px;background:var(--butter)}.b5{bottom:-10%;right:8%;width:540px;height:540px;background:var(--sky)}.b6{top:40%;left:38%;width:380px;height:380px;background:var(--peach);opacity:.5}@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,25px) scale(.97)}}body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.38;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.55 0 0 0 0 0.7 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}.page{max-width:1240px;margin:0 auto;padding:56px 36px 80px;position:relative;z-index:2}.glass{background:var(--glass);border:1px solid var(--glass-border);border-radius:28px;box-shadow:var(--glass-shadow);backdrop-filter:blur(24px) saturate(160%)}.mast{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:32px 40px;margin-bottom:24px}.mast small{font-family:"Plus Jakarta Sans",sans-serif;font-size:12px;letter-spacing:.22em;color:var(--ink-soft);text-transform:uppercase;font-weight:600}.mast small:last-child{text-align:right}.title{font-weight:900;font-size:clamp(58px,8vw,88px);line-height:1;letter-spacing:.04em;text-align:center;background:linear-gradient(135deg,#6B5B95 0%,#FFB3C6 50%,#B8E8D0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}.title i{display:block;font-family:"Fraunces",serif;font-style:italic;font-weight:500;font-size:20px;letter-spacing:.32em;margin-top:14px;color:var(--ink-mid);-webkit-text-fill-color:var(--ink-mid)}.date{display:flex;justify-content:center;align-items:center;gap:18px;font-family:"Plus Jakarta Sans",sans-serif;font-size:13px;letter-spacing:.22em;color:var(--ink-soft);padding:14px 24px;margin-bottom:40px;font-weight:600}.date:before,.date:after{content:"";width:6px;height:6px;border-radius:50%;background:var(--strawberry)}.lead{display:grid;grid-template-columns:2fr 1fr;gap:28px;margin-bottom:34px}.main{padding:44px 48px;position:relative;overflow:hidden;cursor:pointer;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}.main:hover,.brief:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(94,85,114,.12)}.main:before{content:"";position:absolute;top:-40px;right:-40px;width:220px;height:220px;background:radial-gradient(circle,var(--strawberry) 0%,transparent 70%);opacity:.4}.main span,.brief span{display:inline-block;font-family:"Plus Jakarta Sans",sans-serif;font-size:11px;letter-spacing:.16em;color:var(--ink);font-weight:700;padding:5px 14px;border-radius:999px;margin-bottom:14px;background:var(--butter-soft)}.main h1{font-weight:800;font-size:clamp(31px,4vw,44px);line-height:1.24;margin-bottom:22px}.main p{font-size:16px;line-height:1.95;color:var(--ink-mid);text-indent:2em}.byline{font-family:"Fraunces",serif;font-style:italic;font-size:13px;color:var(--ink-soft);margin-top:22px}.side,.grid{display:grid;gap:22px}.brief{padding:26px 28px;position:relative;overflow:hidden;cursor:pointer;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}.brief:nth-child(4n+1) span{background:var(--mint-soft)}.brief:nth-child(4n+2) span{background:var(--lavender-soft)}.brief:nth-child(4n+3) span{background:var(--sky-soft)}.brief:nth-child(4n) span{background:var(--peach-soft)}.brief:before{content:"";position:absolute;bottom:-36px;left:-36px;width:140px;height:140px;border-radius:50%;background:var(--mint);opacity:.26}.brief:nth-child(2n):before{background:var(--lavender)}.brief h4{font-weight:700;font-size:18px;line-height:1.45;margin-bottom:10px}.brief p{font-size:14px;line-height:1.85;color:var(--ink-mid)}.section{margin-top:56px}.section-head{display:flex;align-items:center;gap:18px;margin-bottom:28px;padding:0 8px}.section-head b{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;font-family:"Fraunces",serif;font-style:italic;font-size:17px;font-weight:700;background:var(--mint-soft);color:#2D7A56;flex-shrink:0}.section:nth-of-type(4n+1) .section-head b{background:var(--peach-soft);color:#B6582A}.section:nth-of-type(4n+2) .section-head b{background:var(--sky-soft);color:#2A6BB6}.section:nth-of-type(4n+3) .section-head b{background:var(--lavender-soft);color:#5B3FA8}.section-head h3{font-weight:800;font-size:32px;letter-spacing:.12em}.section-head em{font-family:"Fraunces",serif;font-style:italic;color:var(--ink-soft);font-size:15px;margin-left:auto}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.numbers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:12px 0 8px}.number{border-radius:24px;padding:24px 26px;overflow:hidden;position:relative}.number:after{content:"";position:absolute;right:-34px;top:-34px;width:120px;height:120px;border-radius:50%;background:var(--sky);opacity:.35}.number span,.number em{display:block;color:var(--ink-soft);font-family:"Plus Jakarta Sans",sans-serif;font-size:12px;line-height:1.4}.number strong{display:block;font-family:"Fraunces",serif;font-size:36px;line-height:1.2;margin:6px 0}.modal{position:fixed;inset:0;background:rgba(48,43,64,.36);display:none;align-items:center;justify-content:center;padding:24px;z-index:10}.modal.open{display:flex}.panel{max-width:760px;max-height:86vh;overflow:auto;border-radius:28px;padding:34px;background:var(--glass-strong);border:1px solid var(--glass-border);box-shadow:0 30px 80px rgba(61,56,82,.22);backdrop-filter:blur(26px) saturate(160%)}.panel span{display:inline-block;background:var(--strawberry-soft);border-radius:999px;padding:6px 14px;font-family:"Plus Jakarta Sans",sans-serif;font-size:12px;letter-spacing:.12em;font-weight:700}.panel h2{margin:14px 0 16px;font-size:28px;line-height:1.35}.panel p{color:var(--ink-mid);margin-top:12px;font-size:15px;line-height:1.9}#mBody{white-space:pre-line}.actions{display:flex;gap:12px;margin-top:24px}.actions a,.actions button{border:1px solid var(--glass-border);background:rgba(255,255,255,.72);border-radius:999px;padding:10px 20px;color:var(--ink);text-decoration:none;cursor:pointer;font-weight:700;font-size:14px}.actions a{background:linear-gradient(135deg,var(--strawberry-soft),var(--sky-soft))}@media(max-width:820px){.page{padding:28px 16px 52px}.mast{grid-template-columns:1fr;padding:24px 20px}.mast small,.mast small:last-child{text-align:center}.lead,.grid,.numbers{grid-template-columns:1fr}.main{padding:30px 26px}.section-head{align-items:flex-start}.section-head h3{font-size:28px}.section-head em{display:none}.title i{font-size:14px}.panel{padding:24px 20px}}
 </style>
 </head>
 <body>
@@ -67,107 +67,50 @@ Funloom核心团队
       <div class="byline">— 36氪</div>
     </article>
     <aside class="side">
-    <article class="brief glass" data-title="DeepSeek陈德里开发自动研究Skill，写一篇论文人类只动脑2小时" data-tag="学术前沿" data-url="https://www.qbitai.com/2026/05/425523.html" data-detail="“1%是我写的，99%是Agent写的。”
+    <article class="brief glass" data-title="创始人吴同认为，AI对于游戏行业最大的变革从来不是提升了多少生产力效率，而是改变了生产关系。" data-tag="模型动态" data-url="https://36kr.com/p/3827585618154118" data-detail="文丨刘士武
 
-DeepSeek研究员陈德里，在个人博客更新一篇研究综述论文。
+封面来源 | Funloom 官网
 
-1%是我写的，99%是Agent写的。
+36氪获悉，AI内容共创平台公司北京库兰织梦科技有限公司（以下简称「库兰织梦」），已于近日完成数千万元人民币Pre-A融资。本轮融资由晴澜家族办公室领投，上海天使会跟投，此前投资人包括奇绩创坛、盛大网络&amp;连尚网络创始人陈大年。本轮融资后，公司估值已达到2亿元，资金将用于产品研发升级和团队扩张。
 
-用的是他自己的技能DeliAutoResearch，DeepSeek-V4-Pro研究和写作，GPT-Image2画图。
+库兰织梦成立于2023年，创始人吴同曾任职Unity，拥有5年游戏行业创业经验，推出《12世纪的黎凡特》《活过今晚》《库兰精灵》等十余款游戏，运营游戏发行自媒体“咕咕同”获得数百万播放，作品曾获吉比特、CUSGA、电魂等多个游戏创作大赛最佳玩法奖，上榜25Under25 AI创业者榜单；CTO张吉豪在像素软件作为主程研发《勇者大冒险》《寻仙》等游戏，后出任阿里巴巴高级技术专家，主导从零搭建淘宝特价版搜索、推荐、广告引擎平台，参与1688、淘宝搜索推荐引擎建设；COO郑君凯曾任百度游戏总经理，曾创办上海快盘科技并完成数轮融资，拥有20年游戏行业从业经历。
 
-论文共迭代6次（V1：4 次，V2：1 次，V3：1 次），总耗时6天，进行了约108轮Agent调用，消耗64.8万token，写了2234行LaTeX代码。
+目前团队正在持续吸引游戏、AI行业的顶级人才加入，另有3位核心成员曾担任大厂、独角兽企业高管，均带出过亿级收入爆款。
 
-103个参考文献，全部已验证。论文现为46页，538KB，含7个图表+4个表格。
+Funloom核心团队
 
-论文讲的是自动研究智能体L1–L5自主度分类体系的事：
+作为一家AI内容共创平台公司，库兰织梦目前推出的核心产品是一站式AI内容共创引擎「Funloom AI」，公司致力于研究AI技术在内容创作领域的各类落地场景，目标是降低内容创作门槛，让创作回归创意本身，内容载体涵盖游戏、视频、图文。
 
-通过分析四大架构模式，给出了可扩展性、成本、可靠性等维度对比。
+创始人吴同认为，AI对于游戏行业最大的变革从来不是提升了多少生产力效率，而是改变了生产关系：把游戏内容生产从过去必须依托公司的大型组织模式，下放到个人和小团队，让更多有创意的人能以极低的成本把自己的想法落地，开拓长尾市场带来新的增长点。
 
-并基于六维特征矩阵分析了17个主流系统。
+库兰织梦最早从AI VibeCoding生成游戏切入，推出了RetainerAI游戏生成工具，但团队很快发现了这条路线的核心问题：绝大部分用户无法写清楚提示词，也不懂专业知识，很难通过纯工具直接将想法落地成一款合格的游戏。
 
-还提出了六大开放问题与对应研究方向。
+“每个人都能讲出一种感觉，但现有的工具无法实现这种感觉，AI也猜不到。”吴同告诉36氪，这是直接导致纯vibe coding路线难以做出好游戏的关键原因。和很多追求一步到位做端到端游戏生成的团队不同，Funloom选择把产品迭代拆成了一个个台阶，一步一步往最终目标靠近。
 
-陈德里认为，Code Agent导致计算机科学论文数量疯狂膨胀，同样的工作以前至少需要一个月才能完成。
+“我们不会说把产品马上做成最终形态，立刻就让任何人几句话生成3A大作，那不现实。”吴同表示，团队现阶段的核心目标非常明确：帮助本来就有想法、有创意的创作者砍掉创意之外所有不必要的沉没成本，让他们只需要花心思打磨内容本身即可。
 
-但现在，他的碳基大脑处理这个问题的“总CPU时间”不到2小时。
+为了实现这个目标，库兰织梦把一款游戏的核心要素拆解为四个原子能力——剧情、视觉、数值、交互，逐个突破。
 
-他也写了一句免责声明：观点仅为个人所有，不代表任何组织。
+内容制作工作台
 
-DeepSeek研究员与V4 Pro合写的论文
+剧情部分已经率先解决：团队通过“认知工程”模式，结合专业写作者的合作，把小说戏剧创作中制造冲突、构建起伏、设计明线暗线的方法抽象成模式，训练出的生成能力远高于原生大模型，能让剧情始终保持吸引力，避免落入俗套。
 
-基础模型推动AI工具从研究辅助转向自主研究，但领域缺乏统一框架、术语混乱、评估标准不一。
+接下来即将要落地的是视觉部分。现在AI生图已经有成熟方案，团队要做的就是把生成的美术素材自动适配到现有游戏工程中，把原本粗糙的H5白膜一键替换成美术渲染效果，通过定位识别法拆分UI元素、背景图，完成自动替换，让生成游戏的视觉体验焕然一新。
 
-陈德里和它的AI合著者们提出了一个L1-L5的自主分级体系。
+内容制作工作台
 
-类比自动驾驶的SAE级别，把混乱的AI Agent领域理出了清晰的谱系。
+再往后的是数值和交互。和很多人把数值当成精密计算问题不同，库兰织梦团队认为，数值本质上是“剧情的延伸”，最终目的是服务于用户的心流体验和情绪起伏。什么时候让玩家战力增速放缓制造卡点，什么时候给玩家神器突破瓶颈营造爽点，这些都需要和剧情系统深度绑定，而非单纯的函数计算，团队正围绕“心流服务”重构数值生成逻辑。
 
-L1是最基础的自动补全，也就是最早的GitHub Copilot，预测你下一行代码。
-L2是任务执行，代表是ChatGPT/Claude聊天机器人加上各种工具，能分解任务，但每一步都得人类批准。
-L3是多步骤执行，目前最主流的Claude Code、Cursor Agent这种，能自主执行10到100步，只在关键点请求人类审核
-L4是受限领域内全自主执行，人类仅提供研究目标、评估最终成果，智能体可完成多步实验、代码、论文撰写，但无法自主选择研究问题。
-L5级是完全自定研究议程，智能体可自主选题、分配资源、长期积累知识、跨领域持续研究，是当前未实现的理想状态，核心瓶颈为持续知识积累、可靠自我评估、架构规模化。
+在吴同看来，游戏行业这么多年来之所以同质化严重、换皮横行，本质原因还是生产关系导致的：过去做一款游戏至少要砸几百万进去，团队不得不追求确定性，只能去换皮验证过的成熟玩法，不敢去碰新鲜有创意但没被验证过的题材。
 
-目前行业前沿初步达到L4，L5还只是个设想。
+部分Funloom作者在社交媒体上宣传游戏
 
-论文认为真正的瓶颈不是模型能力，而是「持续知识积累」和「可靠自我评估」。
-
-除了按自主性级别，论文中又按智能体架构总结了4种主流模式。
-
-单智能体循环
-
-早期研究ReAct、Reflexion、LATS、思维树等为代表。单模型迭代推理-行动-观察，简单高效，但复杂任务能力有限。
-
-多智能体协作
-
-早期智能体框架CAMEL、AutoGen、MetaGPT等为代表，特点是分工协作、多视角纠错，成本较高，沟通易混乱。
-
-分层调度
-
-Claude Code和Devin等为代表，分层规划、任务分解，适合长时程复杂研究。
-
-工具增强执行
-
-SWE-Agent等为代表，核心工具有代码执行环境、网页浏览、API / 数据库、多模态工具，Agent-Computer Interface（ACI） 的设计直接影响性能。
-
-论文四种模式不是谁优谁劣，而是针对特定的任务要选择合适的工具。
-
-如简单短任务选单智能体循环（低成本、易实现）；需要多视角纠错、复杂分工选多智能体协作；长时程、高复杂度研究选分层调度（强规划、易监管）；需要对接外部工具、环境交互选工具增强执行（能力边界由工具决定）。
-
-但实际应用中，其实多采用混合架构，结合多种模式优势。
-
-有了研究框架，再横向对比当前常见的17个自主研究智能体，揭示领域已从早期通用脆弱原型，演进为L4级受限域专用系统。代码智能体成熟度最高，科学智能体开始产出可验证新发现。
-
-而迈向L5完全自主的核心瓶颈在于持续知识积累、可靠自我评估、架构规模化。
-
-最后，论文中还提出了，六大开放问题：
-
-认知循环陷阱：智能体陷入重复无效策略，无自我终止能力。
-上下文限制：固定窗口（4K-1M token）无法支撑长时程研究。
-创新性评估：无自动化方法衡量研究原创性与价值。
-可复现性：模型随机性、提示敏感性导致结果无法复现。
-安全伦理：双用途风险、自主提升风险、学术诚信风险。
-*   成本问题：单任务成本 50，高成本加剧科研不平等。
-
-One More THing
-
-陈德里自述，高强度工作导致的精力不足，让他搁置了很多事。
-
-博客、写作，现在是Agent让他有机会把这些重新捡了起来。
-
-除了这篇研究综述，还更新了个人主页。
-
-有了Agent，这些任务完成起来效率超高。
-
-人类的角色，从“执行者”变成了“发起者”。
-
-参考链接：
-
-[1]">
-    <span>学术前沿</span>
-    <h4>DeepSeek陈德里开发自动研究Skill，写一篇论文人类只动脑2小时</h4>
-    <p>量子位</p>
+但AI时代来了之后，生产门槛被拉低，一个人就能做出可玩性较高的游戏。“很多题材不是没有用户，只是过去根本不可能立项。”吴同举例，做历史题材大家都扎堆做三国，因为三国认知度高、受众基数大，做项目立项能通过，但为什么鲜有人做明朝背景的游戏？不是明朝没有受众，只是在过去的生产关系下，没人敢赌。现在AI把成本打下来了，小团队甚至个人就能做，例如Funloom自研的《崇祯模拟器》刚一出来就获得了大量玩家的认可，证明题材的需求一直都在，只是缺一个落地的机会。">
+    <span>模型动态</span>
+    <h4>创始人吴同认为，AI对于游戏行业最大的变革从来不是提升了多少生产力效率，而是改变了生产关系。</h4>
+    <p>36氪</p>
   </article>
-    <article class="brief glass" data-title="教皇发布首份AI通谕：4万字10个观点，AI焦虑被说透了" data-tag="产品发布" data-url="https://36kr.com/p/3827500620652800" data-detail="2026 年 5 月 15 日，教宗良十四世在一份长达四万余字的文件上签下了自己的名字。那一天，恰好是教宗良十三世发布《新事》通谕整整 135 周年，1891 年签署的那份文件，是天主教会第一次正式回应工业革命对劳动秩序的冲击。
+    <article class="brief glass" data-title="句句提 AI，字字在说人。" data-tag="模型动态" data-url="https://36kr.com/p/3827500620652800" data-detail="2026 年 5 月 15 日，教宗良十四世在一份长达四万余字的文件上签下了自己的名字。那一天，恰好是教宗良十三世发布《新事》通谕整整 135 周年，1891 年签署的那份文件，是天主教会第一次正式回应工业革命对劳动秩序的冲击。
 
 十天后，也就是 2026 年的 5 月 25 日，良十四世亲自出席发布会，正式向世界颁布这份题为《Magnifica Humanitas》的通谕，这是天主教会有史以来，第一次以人工智能为核心议题发布通谕。在这个发布会现场，除了枢机主教与神学教授之外，还有 Anthropic 联合创始人 Chris Olah。
 
@@ -218,122 +161,65 @@ AI 提供了许多令人惊叹的可能性，但即便是设计者，对生成�
 4、AI 不能被当成人类智能，更不能被当成道德主体
 
 AI不是一堆数据，而是拥有自由、关系和道德责任的主体。">
-    <span>产品发布</span>
-    <h4>教皇发布首份AI通谕：4万字10个观点，AI焦虑被说透了</h4>
+    <span>模型动态</span>
+    <h4>句句提 AI，字字在说人。</h4>
     <p>36氪</p>
   </article>
     </aside>
   </section>
   <section class="numbers">
-    <div class="number glass"><span>追踪来源</span><strong>2</strong><em>持续更新</em></div>
-    <div class="number glass"><span>候选资讯</span><strong>15</strong><em>智能去重</em></div>
-    <div class="number glass"><span>晚报条目</span><strong>15</strong><em>精选收录</em></div>
+    <div class="number glass"><span>追踪来源</span><strong>1</strong><em>持续更新</em></div>
+    <div class="number glass"><span>候选资讯</span><strong>7</strong><em>智能去重</em></div>
+    <div class="number glass"><span>晚报条目</span><strong>7</strong><em>精选收录</em></div>
   </section>
 
   <section class="section">
     <div class="section-head"><b>I.</b><h3>模 型</h3><em>Models & Labs</em></div>
     <div class="grid">
-    <article class="brief glass" data-title="DeepSeek陈德里开发自动研究Skill，写一篇论文人类只动脑2小时" data-tag="学术前沿" data-url="https://www.qbitai.com/2026/05/425523.html" data-detail="“1%是我写的，99%是Agent写的。”
+    <article class="brief glass" data-title="创始人吴同认为，AI对于游戏行业最大的变革从来不是提升了多少生产力效率，而是改变了生产关系。" data-tag="模型动态" data-url="https://36kr.com/p/3827585618154118" data-detail="文丨刘士武
 
-DeepSeek研究员陈德里，在个人博客更新一篇研究综述论文。
+封面来源 | Funloom 官网
 
-1%是我写的，99%是Agent写的。
+36氪获悉，AI内容共创平台公司北京库兰织梦科技有限公司（以下简称「库兰织梦」），已于近日完成数千万元人民币Pre-A融资。本轮融资由晴澜家族办公室领投，上海天使会跟投，此前投资人包括奇绩创坛、盛大网络&amp;连尚网络创始人陈大年。本轮融资后，公司估值已达到2亿元，资金将用于产品研发升级和团队扩张。
 
-用的是他自己的技能DeliAutoResearch，DeepSeek-V4-Pro研究和写作，GPT-Image2画图。
+库兰织梦成立于2023年，创始人吴同曾任职Unity，拥有5年游戏行业创业经验，推出《12世纪的黎凡特》《活过今晚》《库兰精灵》等十余款游戏，运营游戏发行自媒体“咕咕同”获得数百万播放，作品曾获吉比特、CUSGA、电魂等多个游戏创作大赛最佳玩法奖，上榜25Under25 AI创业者榜单；CTO张吉豪在像素软件作为主程研发《勇者大冒险》《寻仙》等游戏，后出任阿里巴巴高级技术专家，主导从零搭建淘宝特价版搜索、推荐、广告引擎平台，参与1688、淘宝搜索推荐引擎建设；COO郑君凯曾任百度游戏总经理，曾创办上海快盘科技并完成数轮融资，拥有20年游戏行业从业经历。
 
-论文共迭代6次（V1：4 次，V2：1 次，V3：1 次），总耗时6天，进行了约108轮Agent调用，消耗64.8万token，写了2234行LaTeX代码。
+目前团队正在持续吸引游戏、AI行业的顶级人才加入，另有3位核心成员曾担任大厂、独角兽企业高管，均带出过亿级收入爆款。
 
-103个参考文献，全部已验证。论文现为46页，538KB，含7个图表+4个表格。
+Funloom核心团队
 
-论文讲的是自动研究智能体L1–L5自主度分类体系的事：
+作为一家AI内容共创平台公司，库兰织梦目前推出的核心产品是一站式AI内容共创引擎「Funloom AI」，公司致力于研究AI技术在内容创作领域的各类落地场景，目标是降低内容创作门槛，让创作回归创意本身，内容载体涵盖游戏、视频、图文。
 
-通过分析四大架构模式，给出了可扩展性、成本、可靠性等维度对比。
+创始人吴同认为，AI对于游戏行业最大的变革从来不是提升了多少生产力效率，而是改变了生产关系：把游戏内容生产从过去必须依托公司的大型组织模式，下放到个人和小团队，让更多有创意的人能以极低的成本把自己的想法落地，开拓长尾市场带来新的增长点。
 
-并基于六维特征矩阵分析了17个主流系统。
+库兰织梦最早从AI VibeCoding生成游戏切入，推出了RetainerAI游戏生成工具，但团队很快发现了这条路线的核心问题：绝大部分用户无法写清楚提示词，也不懂专业知识，很难通过纯工具直接将想法落地成一款合格的游戏。
 
-还提出了六大开放问题与对应研究方向。
+“每个人都能讲出一种感觉，但现有的工具无法实现这种感觉，AI也猜不到。”吴同告诉36氪，这是直接导致纯vibe coding路线难以做出好游戏的关键原因。和很多追求一步到位做端到端游戏生成的团队不同，Funloom选择把产品迭代拆成了一个个台阶，一步一步往最终目标靠近。
 
-陈德里认为，Code Agent导致计算机科学论文数量疯狂膨胀，同样的工作以前至少需要一个月才能完成。
+“我们不会说把产品马上做成最终形态，立刻就让任何人几句话生成3A大作，那不现实。”吴同表示，团队现阶段的核心目标非常明确：帮助本来就有想法、有创意的创作者砍掉创意之外所有不必要的沉没成本，让他们只需要花心思打磨内容本身即可。
 
-但现在，他的碳基大脑处理这个问题的“总CPU时间”不到2小时。
+为了实现这个目标，库兰织梦把一款游戏的核心要素拆解为四个原子能力——剧情、视觉、数值、交互，逐个突破。
 
-他也写了一句免责声明：观点仅为个人所有，不代表任何组织。
+内容制作工作台
 
-DeepSeek研究员与V4 Pro合写的论文
+剧情部分已经率先解决：团队通过“认知工程”模式，结合专业写作者的合作，把小说戏剧创作中制造冲突、构建起伏、设计明线暗线的方法抽象成模式，训练出的生成能力远高于原生大模型，能让剧情始终保持吸引力，避免落入俗套。
 
-基础模型推动AI工具从研究辅助转向自主研究，但领域缺乏统一框架、术语混乱、评估标准不一。
+接下来即将要落地的是视觉部分。现在AI生图已经有成熟方案，团队要做的就是把生成的美术素材自动适配到现有游戏工程中，把原本粗糙的H5白膜一键替换成美术渲染效果，通过定位识别法拆分UI元素、背景图，完成自动替换，让生成游戏的视觉体验焕然一新。
 
-陈德里和它的AI合著者们提出了一个L1-L5的自主分级体系。
+内容制作工作台
 
-类比自动驾驶的SAE级别，把混乱的AI Agent领域理出了清晰的谱系。
+再往后的是数值和交互。和很多人把数值当成精密计算问题不同，库兰织梦团队认为，数值本质上是“剧情的延伸”，最终目的是服务于用户的心流体验和情绪起伏。什么时候让玩家战力增速放缓制造卡点，什么时候给玩家神器突破瓶颈营造爽点，这些都需要和剧情系统深度绑定，而非单纯的函数计算，团队正围绕“心流服务”重构数值生成逻辑。
 
-L1是最基础的自动补全，也就是最早的GitHub Copilot，预测你下一行代码。
-L2是任务执行，代表是ChatGPT/Claude聊天机器人加上各种工具，能分解任务，但每一步都得人类批准。
-L3是多步骤执行，目前最主流的Claude Code、Cursor Agent这种，能自主执行10到100步，只在关键点请求人类审核
-L4是受限领域内全自主执行，人类仅提供研究目标、评估最终成果，智能体可完成多步实验、代码、论文撰写，但无法自主选择研究问题。
-L5级是完全自定研究议程，智能体可自主选题、分配资源、长期积累知识、跨领域持续研究，是当前未实现的理想状态，核心瓶颈为持续知识积累、可靠自我评估、架构规模化。
+在吴同看来，游戏行业这么多年来之所以同质化严重、换皮横行，本质原因还是生产关系导致的：过去做一款游戏至少要砸几百万进去，团队不得不追求确定性，只能去换皮验证过的成熟玩法，不敢去碰新鲜有创意但没被验证过的题材。
 
-目前行业前沿初步达到L4，L5还只是个设想。
+部分Funloom作者在社交媒体上宣传游戏
 
-论文认为真正的瓶颈不是模型能力，而是「持续知识积累」和「可靠自我评估」。
-
-除了按自主性级别，论文中又按智能体架构总结了4种主流模式。
-
-单智能体循环
-
-早期研究ReAct、Reflexion、LATS、思维树等为代表。单模型迭代推理-行动-观察，简单高效，但复杂任务能力有限。
-
-多智能体协作
-
-早期智能体框架CAMEL、AutoGen、MetaGPT等为代表，特点是分工协作、多视角纠错，成本较高，沟通易混乱。
-
-分层调度
-
-Claude Code和Devin等为代表，分层规划、任务分解，适合长时程复杂研究。
-
-工具增强执行
-
-SWE-Agent等为代表，核心工具有代码执行环境、网页浏览、API / 数据库、多模态工具，Agent-Computer Interface（ACI） 的设计直接影响性能。
-
-论文四种模式不是谁优谁劣，而是针对特定的任务要选择合适的工具。
-
-如简单短任务选单智能体循环（低成本、易实现）；需要多视角纠错、复杂分工选多智能体协作；长时程、高复杂度研究选分层调度（强规划、易监管）；需要对接外部工具、环境交互选工具增强执行（能力边界由工具决定）。
-
-但实际应用中，其实多采用混合架构，结合多种模式优势。
-
-有了研究框架，再横向对比当前常见的17个自主研究智能体，揭示领域已从早期通用脆弱原型，演进为L4级受限域专用系统。代码智能体成熟度最高，科学智能体开始产出可验证新发现。
-
-而迈向L5完全自主的核心瓶颈在于持续知识积累、可靠自我评估、架构规模化。
-
-最后，论文中还提出了，六大开放问题：
-
-认知循环陷阱：智能体陷入重复无效策略，无自我终止能力。
-上下文限制：固定窗口（4K-1M token）无法支撑长时程研究。
-创新性评估：无自动化方法衡量研究原创性与价值。
-可复现性：模型随机性、提示敏感性导致结果无法复现。
-安全伦理：双用途风险、自主提升风险、学术诚信风险。
-*   成本问题：单任务成本 50，高成本加剧科研不平等。
-
-One More THing
-
-陈德里自述，高强度工作导致的精力不足，让他搁置了很多事。
-
-博客、写作，现在是Agent让他有机会把这些重新捡了起来。
-
-除了这篇研究综述，还更新了个人主页。
-
-有了Agent，这些任务完成起来效率超高。
-
-人类的角色，从“执行者”变成了“发起者”。
-
-参考链接：
-
-[1]">
-    <span>学术前沿</span>
-    <h4>DeepSeek陈德里开发自动研究Skill，写一篇论文人类只动脑2小时</h4>
-    <p>量子位</p>
+但AI时代来了之后，生产门槛被拉低，一个人就能做出可玩性较高的游戏。“很多题材不是没有用户，只是过去根本不可能立项。”吴同举例，做历史题材大家都扎堆做三国，因为三国认知度高、受众基数大，做项目立项能通过，但为什么鲜有人做明朝背景的游戏？不是明朝没有受众，只是在过去的生产关系下，没人敢赌。现在AI把成本打下来了，小团队甚至个人就能做，例如Funloom自研的《崇祯模拟器》刚一出来就获得了大量玩家的认可，证明题材的需求一直都在，只是缺一个落地的机会。">
+    <span>模型动态</span>
+    <h4>创始人吴同认为，AI对于游戏行业最大的变革从来不是提升了多少生产力效率，而是改变了生产关系。</h4>
+    <p>36氪</p>
   </article>
-    <article class="brief glass" data-title="教皇发布首份AI通谕：4万字10个观点，AI焦虑被说透了" data-tag="产品发布" data-url="https://36kr.com/p/3827500620652800" data-detail="2026 年 5 月 15 日，教宗良十四世在一份长达四万余字的文件上签下了自己的名字。那一天，恰好是教宗良十三世发布《新事》通谕整整 135 周年，1891 年签署的那份文件，是天主教会第一次正式回应工业革命对劳动秩序的冲击。
+    <article class="brief glass" data-title="句句提 AI，字字在说人。" data-tag="模型动态" data-url="https://36kr.com/p/3827500620652800" data-detail="2026 年 5 月 15 日，教宗良十四世在一份长达四万余字的文件上签下了自己的名字。那一天，恰好是教宗良十三世发布《新事》通谕整整 135 周年，1891 年签署的那份文件，是天主教会第一次正式回应工业革命对劳动秩序的冲击。
 
 十天后，也就是 2026 年的 5 月 25 日，良十四世亲自出席发布会，正式向世界颁布这份题为《Magnifica Humanitas》的通谕，这是天主教会有史以来，第一次以人工智能为核心议题发布通谕。在这个发布会现场，除了枢机主教与神学教授之外，还有 Anthropic 联合创始人 Chris Olah。
 
@@ -384,99 +270,9 @@ AI 提供了许多令人惊叹的可能性，但即便是设计者，对生成�
 4、AI 不能被当成人类智能，更不能被当成道德主体
 
 AI不是一堆数据，而是拥有自由、关系和道德责任的主体。">
-    <span>产品发布</span>
-    <h4>教皇发布首份AI通谕：4万字10个观点，AI焦虑被说透了</h4>
-    <p>36氪</p>
-  </article>
-    <article class="brief glass" data-title="AI已然成为未来游戏行业发展的必选项。" data-tag="模型动态" data-url="https://36kr.com/p/3827658881323649" data-detail="文丨贝果树
-
-编辑丨刘士武
-
-5月27日，2026年腾讯游戏发布会于晚上八点举办。在发布会上，腾讯从制作、发行、投资三个板块带来了42款游戏的新动态，其中包含15款新品，新品的数量相较于2025年发布会的24款有所减少。
-
-与往届发布会不同的是，此次的发布会上，腾讯在AI游戏应用方面有了更多的输出。在游戏制作板块，腾讯介绍了如《和平精英》中的新AI队友小田、《王者荣耀》中的AI助手灵宝和电竞的AI解说等应用。
-
-当然，这些AI在游戏中的应用案例绝大部分都已经在此前实现，
-
-最引人瞩目的，是在发布会最后的“One More Thing”环节，腾讯带来了三款更为重磅的AI相关产品发布，包括AI渲染方案「MagicDawn」、由AI参与的模拟经营游戏《数字景德镇·瓷都小匠》以及AI游戏创作平台「代号Craft」。
-
-当然，腾讯选择在今年的游戏发布会上放出“AI大招”，属于意料之中却又不乏惊喜的事。今年3月，腾讯就在GDC大会上带来了21场与AI相关的分享，此次发布会上，又介绍了多项游戏AI应用的进展。可以看见腾讯在AI应用探索方面的积累和决心。
-
-MagicDawn基于神经网络实时推理技术，打破了传统全局光照的技术限制，将游戏光照表现提升到新的水平。产品已经完成和Arm的深度合作，适配新一代Arm GPU和内置AI加速器，能够在移动端落地高质量AI渲染。值得一提的是，选择把AI光照方案全面开源，MagicDawn这步棋走得很清晰，也侧面证明了腾讯对技术实力的信心。
-
-代号Craft的核心能力是通过自然语言交互生成游戏。用户输入简单文字描述，AI就能快速生成2D、3D等不同类型的游戏雏形，把创意转化为可玩内容。平台针对传统开发的美术产能痛点，内置完整AIGC工具，还免费开放超过一万种预制美术资产，降低创作门槛。该平台近期将开启首次测试。
-
-《数字景德镇·瓷都小匠》是腾讯和景德镇官方机构联合打造的瓷业经营小游戏，也是官方首款该主题的小游戏。玩家可以从学徒成长为窑主，通过经营收集历代名瓷，体验制瓷工艺和千年瓷业发展。游戏使用多模态AI数据集，结合了AI数字人、AI 3D生成等技术，计划在2026年夏季正式上线。
-
-整体看下来，腾讯在游戏AI领域的布局，已经从早期探索试错，走到了全链路落地的阶段。早期AI主要解决客服、内容审核等后端问题，后来逐步应用到NPC、赛事解说等用户体验功能，现在已经进入渲染、创作、玩法设计这些开发核心环节，开始真正改变游戏行业的生产方式。
-
-这种从底层技术到上层产品的完整布局，会帮助腾讯在AI游戏时代建立明显的差异化优势，也给游戏行业提供了可参考的发展路径。
-
-除了AI，在具体的游戏产品方面，腾讯此次发布会的重点，主要聚焦于玩法创新和全球化两个方向。
-
-在玩法创新上，有像新品《粒粒的小人国》《虚幻》这样拓宽腾讯原有产品赛道，探索差异化玩法的新品。也在如《和平精英》《三角洲行动》等老游上作了玩法创新，延长产品生命力。持续创新、长线运营的思路，也在让更多游戏跻身“长青游戏”之列。
-
-而在全球化上，腾讯一方面在积极推动自研游戏出海，另一方面也通过投资和收购海外工作室，为玩家带来了更多维度的游戏体验。而即将测试或上线的游戏阵容中，包含《舞力全开：派对》《彩虹六号：攻势》《刺客信条：黑旗 记忆重置》三款育碧IP作品，这说明腾讯多年以来和育碧在资本、技术、产品端的合作正在进一步深化。
-
-在产品发布中，出现了多个腾讯海外投资工作室产品的内容，也有多位海外开发者出镜参与发布。《控制：共振》将提供高质量中文本地化，《流放之路2》制作人也宣布将为国服玩家提供免费试玩活动。
-
-而在自研游戏层面，也有如《湮灭之潮》的国产3A大作，实现了国产游戏的技术创新和文化表达。
-
-2023年来，中国游戏市场收入年均增长率达7%以上，于此同时，海外市场的增速却在放缓。在此背景下，腾讯等中国厂商正在以优秀的自研产品和海外投资发行产品，加重中国游戏市场在国际上的分量。
-
-以下为腾讯此次发布会中，部分重要产品的介绍。
-
-制作
-
-《粒粒的小人国》
-
-《粒粒的小人国》首曝于25年9月，是一款生活模拟类的新作。在《粒粒的小人国》中，玩家将会扮演一位因意外变小的主角，与小人“粒粒”们一同进行建造、采集、烹饪等活动。在社交方面，《粒粒的小人国》主打轻量化的陪伴式社交，玩家可以选择与真人玩家进行互动，也可以与AI队友共同完成任务。在发布会上，腾讯也宣布了新的“粒粒“种族的相关消息。
-
-今年3月，《粒粒的小人国》开启首测，首测期间，游戏首测的消息登上了各大平台的热搜榜。截至目前，《粒粒的小人国》在官网上的预约量已经超过一千万。
-
-生活模拟作为当今各大厂商都有布局的热门赛道，《粒粒的小人国》也必将于同期上线的其它产品展开竞争。
-
-《粒粒小人国》
-
-《虚环》">
     <span>模型动态</span>
-    <h4>AI已然成为未来游戏行业发展的必选项。</h4>
+    <h4>句句提 AI，字字在说人。</h4>
     <p>36氪</p>
-  </article>
-    <article class="brief glass" data-title="荣耀600系列手机发布：4K闪光微单Live，国补价2294.15元起" data-tag="产品发布" data-url="https://www.qbitai.com/2026/05/425155.html" data-detail="独特“幸运星”ID设计，打造数字系列史上最精致外观
-
-5月25日，以“4K Live星光毕业歌会”为主题的荣耀600系列新品发布会在厦门举行，新品凭借独特“幸运星”潮流设计、行业唯一全焦段4K Live直出、“教科书级” 护眼、档位最大8600mAh电池四大核心创新，实现体验全方位升级，为年轻人带来好看、好拍、护眼、好用的“超级4K实况神机”！荣耀600系列共推出Pro版、超级版、元气版三款机型，国补价2294.15元起。
-
-独特“幸运星”ID设计，打造数字系列史上最精致外观
-
-手握幸运星，好事自然成！荣耀600系列精准贴合年轻用户对高颜值与美好寓意的双重追求，并延续了数字系列一贯的年轻潮流基因，在颜色、纹理、光影、工艺上进一步探索。荣耀600 Pro和荣耀600超级版带来全新“幸运星”设计，创新采用行业首发3D星河美学设计，在机身背板呈现三种不同的星星形态。42颗钻闪四芒星，象征着“宇宙为罗盘，幸运伴前行”，以秩序与平衡，守护用户的幸运能量；行业首发的双重磁吸工艺，借鉴了美甲的猫眼效果，打造出极具质感的猫眼双子星环，形成“大星盘+小星盘”的运势场，让用户可以时刻感受宇宙级的浪漫；此外，机身上还带来了上千颗小碎星凝成的星云，希望无尽的星云为用户带来无尽的幸运。
-
-除了色彩和纹理的赏心悦目，荣耀600系列在舒适性上也做了全面升级，全系机身采用了晶莹通透的一体冷调工艺背板，自然细腻的雾面金属中框。荣耀600 Pro和超级版极致协调的黄金比例水晶岛镜组设计，以及舒适的大R角设计，希望成为年轻用户眼里的多巴胺和手心里的阿贝贝。
-
-除此之外，荣耀600系列正面也做了全新设计，凭借荣耀自研天际线封装工艺，行业首次实现0.98mm极窄等距黑边，让用户可以追剧游戏更自由，美到毫无边界；荣耀600系列全系标配IP68/IP69/IP69K高阶防护，全面可靠，日常使用耐用更安心，整体质感媲美旗舰水准。
-
-超级4K实况神机，1234K，4K Live超清
-
-荣耀600 Pro和超级版搭载行业领先2亿超清大底主摄，不仅拥有档位最大的1/1.4英寸传感器，更支持档位最强CIPA 6.0专业级防抖，画面通透细腻，呈现旗舰级实况效果，也为后期创作预留充足空间。
-
-为了更好地满足用户的Live体验，荣耀600超级版支持行业领先4K Live直出，荣耀600 Pro更支持行业唯一全焦段4K Live直出，让用户真正实现4K live自由，Live更清晰，远近都自由。
-
-荣耀600 Pro具备主摄、长焦、广角、前置四大镜头。1倍直出大合影，装得进我们，装得下全世界；2倍直出朋友圈，随时随地展示亲密；3.5倍直出美出圈，超美超细腻，发丝也有生命力；行业唯一7倍超长焦4K Live直出，无论多远，都让你有“主角感”。此外，0.6倍超广角和行业唯一的前置自拍4K Live直出，让用户无论自拍还是合拍，全都鲜活清晰，拿捏微单级原生感，掌控全焦段自由度。
-
-荣耀600 Pro和超级版还搭载行业首个双对称AI变焦闪光灯，暗光夜景补光均匀柔和，CCD氛围感拉满。荣耀600 Pro更支持行业领先闪光灯双段打闪模式，模拟微单相机的二段闪光技术，先精准测光、再智能补光，照亮面部的同时，让肤色更加柔和均匀，氛围感媲美红毯之夜的明星大片。
-
-在影像体验层面，荣耀600系列率先构建行业首个“拍-修-享”一站式4K Live无损生态链路，打通拍摄、精修到社交分享全链路，拥有行业最豪华的4K Live生态天团助阵：美图秀秀、醒图和Wink支持4K Live无损导入和修图，画质全程零折损；小红书支持4K Live无损分享；真正实现全链路4K无损。
-
-同时，荣耀还携手小红书成为“全生态型战略伙伴”。小红书商业手机数码策略总监波图称，“荣耀和小红书之间，有一种天然的共鸣：我们都在帮用户找到更好的方式，去表达自己。4K Live的趋势共创，是双方产品团队与内容生态的深度协作。未来，我们还会持续握手荣耀的多个部门、多个生态。期待和荣耀一起，走得更远。”
-
-在后期玩法上，荣耀600系列携手微博，首次开启3D照片一键上传合作，为年轻用户带来“一键即立体，分享即惊艳”的全新创作与社交体验。同时，其还搭载分身 Live 和“世另我”同框、YOYO-Live 盲盒、4K Live拼图出框等丰富AI创意玩法，让用户的分享玩出花。
-
-此外，荣耀还带来了极具创意的百变磁吸副屏，它支持拍照预览、远程遥控、拍照补光等功能，是用户旅拍出片的秘密武器。同时它也可以作为电子吧唧，变身随身时尚单品，超多创意玩法可供用户发掘，解锁全新手机交互模式，轻松满足年轻人花式趣味创作需求。
-
-“教科书级”荣耀绿洲护眼屏，再次刷新档位标准">
-    <span>产品发布</span>
-    <h4>荣耀600系列手机发布：4K闪光微单Live，国补价2294.15元起</h4>
-    <p>量子位</p>
   </article>
     </div>
   </section>
@@ -605,356 +401,6 @@ Humanoid另一个引发行业关注的点是开发速度。
     <h4>创业2年，干出270亿：这家机器人公司，赚麻了</h4>
     <p>36氪</p>
   </article>
-    <article class="brief glass" data-title="OpenAI挖来了个F1级别车手搞公关" data-tag="公司动态" data-url="https://www.qbitai.com/2026/05/425857.html" data-detail="曾在Salesforce干了13年营销
-
-OpenAI要发力营销了！
-
-你没听错，虽然CEO奥特曼天天活跃在各大社交媒体平台，但谁曾想：
-
-光是找一个合适的CMO（首席营销官），他们就花了整整半年时间。
-
-直到现在，他们终于找到了那个男人——Colin Fleming。
-
-插一则纽约时报打听来的小八卦，在定下Colin Fleming之前，OpenAI找的CMO候选人名头一个比一个响：
-
-优步总裁Jill Hazelbaker、苹果前设计总监Jony Ive的公关负责人Sarah O’Brien、Square前公关高管Aaron Zamost……每一个拎出来，都够独当一面。
-
-然而最终，却偏偏是Colin Fleming从中“脱颖而出”。
-
-So why？只能说，这位早期曾效力红牛车队、参加过F1级别职业比赛的CMO，人生经历还是过于精彩了。
-
-Colin Fleming其人
-
-OpenAI为何选中Colin Fleming，翻完后者的领英，我算是知道答案了。
-
-原因大概有两点：一个是经验，另一个是勇气。
-
-经验算是比较明面上的了，因为在加入OpenAI之前，他有三段与营销有关的工作经历。
-
-不那么为人熟知的，就是最早在eSoles担任市场营销主管的4年。
-
-这是一家为骑行、滑雪等专业运动提供鞋垫定制服务的公司，基本上可以归纳为Colin从车手到营销的转型起点。
-
-再往后，就是让他真正出圈的那13年——Salesforce。
-
-在Salesforce的13年，Colin其实赶上了企业软件行业最关键的一次转向。
-
-今天大家已经习惯云计算和SaaS，但在当时，大多数企业还在用本地服务器和买断式软件，“CRM”（客户关系管理）这种词对很多人来说更像行业黑话。
-
-Colin和团队做的，恰恰是把这些复杂技术，翻译成市场能听懂的语言——
-
-不再只讲产品功能，而开始讲“未来工作方式”“企业数字化”“云时代”这些更大众化的叙事。
-
-Salesforce后来之所以能从一家卖CRM的软件公司，变成云计算时代的行业代表，这是很重要的一步。
-
-而Colin也在这个过程中，从产品营销总监一路升到全球营销执行副总裁，顺带拿下了Adweek年度B2B品牌、AdAge年度营销人等一堆奖项。
-
-这之后，他又去了ServiceNow担任CMO，这也是他在加入OpenAI之前的身份。
-
-虽然这家公司不如苹果、微软知名，但在“企业数字化工作流”这个赛道，它就是标准和代名词。
-
-就这么说吧，当你给银行客服打电话、在公司提交报销申请、让IT部门修电脑……这些事情背后很可能就是ServiceNow在工作。
-
-而在ServiceNow，Colin做的事情依旧没变——
-
-继续把那些复杂、抽象、偏底层的企业技术，讲成市场愿意理解的语言。
-
-不到一年，他就入选了Forbes全球最具影响力CMO榜单。
-
-所以某种程度上来说，Colin最擅长的或许并不是传统广告营销，而是：
-
-当一种新技术出现时，如何让整个市场真正理解它。
-
-放在当下，这句话像是专门为OpenAI量身定制的。
-
-ChatGPT已经家喻户晓，OpenAI如何进一步从Anthropic手中抢夺企业端市场，这就是它找上Colin的根本原因。
-
-但光有经验，仍不足以解释为什么偏偏是他。
-
-这就要说到第二点：勇气。要理解这份勇气，得先知道这份工作有多难。
-
-据称那串候选人名单里没有一个接下来，关键症结就是“CEO奥特曼太劝退了”。
-
-他频繁公开发声，自行设定议程，这让他们觉得在他身边干CMO，这活根本没法干。
-
-那Colin为啥接了呢？
-
-作为拥有近20年营销经验的专业人士，他肯定不是不清楚这点。
-
-但谁让他曾经是个追求刺激、喜欢挑战的车手呢。Colin在个人主页上是这样介绍自己的：
-
-在我职业生涯早期，我曾效力于红牛车队，参加过F1级别的职业比赛。那种速度、精准度和压力塑造了我今天的领导方式：果断、负责，并且在高风险的情况下也能游刃有余地进行大规模运作。
-
-某种程度上，这段经历其实也解释了他后来很多职业选择，因为他本来就不是那种习惯待在安全区里的人。
-
-当年从赛道退下来后，他没有选择一条更稳妥的路，而是直接跨进了一个与赛车几乎毫无关系的行业，从零开始做市场与品牌。
-
-后来无论是Salesforce、ServiceNow，还是现在的OpenAI，他几乎每一次跳槽，踩中的都是技术范式切换最剧烈的时候。
-
-而这一次可能尤其如此。毕竟现在的OpenAI，既是全球最炙手可热的AI公司，也是最复杂、最难做品牌管理的公司之一。
-
-一边是高速膨胀的商业化压力，一边是AGI、安全、监管、舆论这些巨大争议；再加上一个几乎自带全球流量的奥特曼，很多传统CMO光是想想都头疼。">
-    <span>公司动态</span>
-    <h4>OpenAI挖来了个F1级别车手搞公关</h4>
-    <p>量子位</p>
-  </article>
-    <article class="brief glass" data-title="Codex自我蒸馏玩法火了！OpenAI员工亲授：复制粘贴就能让AI消灭重复劳动" data-tag="公司动态" data-url="https://www.qbitai.com/2026/05/425810.html" data-detail="只需一段提示词
-
-Codex自家程序员，直接把Codex「自我蒸馏」的秘籍给爆出来了…
-
-只需要把一段提示词，直接复制粘贴进Codex。
-
-它就会主动翻查你的历史会话，找出你一直在手动重复做的事，然后替你把这些工作流打包成可复用的工具。
-
-这位Codex成员可以说是相当慷慨，经过网友反馈之后，他还立马迭代出了一个2.0版本。
-
-这怎么说呢…老哥还是太全面了。
-
-OpenAI总裁Greg Brockman也亲自赶来转发点赞了。
-
-有意思的是，Brockman还同时转发了一条冷知识：Codex是开源的。
-
-Codex自我蒸馏，怎么做到的？
-
-我们来细品一下Vabihav（就叫他VB吧）发布的这两版提示词。
-
-第一版是酱婶儿的：
-
-看看我最近的会话，找出重复的工作流或重复的请求。
-对于我一直在手动做的事，给我建议：
-
-1.   如果是可复用工作流，创建一个skill；2. 如果是有边界的角色或调查任务，创建一个custom subagent。
-
-重点关注CI失败、PR审查、changelog、文档更新、发版准备、调试、测试分诊这类实际工作。
-只创建有用的，保持简洁。
-
-很短，只有9行。
-
-直接把这段提示词复制粘贴进Codex，它就会开始开始翻你的历史会话，找出那些你反复在做的动作。
-
-然后告诉你这件事该做成skill，那件事更适合派个subagent去专门负责。
-
-咋说呢，这提示词简洁是简洁。
-
-但CI失败、PR审查、changelog这些名词…感觉都太专业了，好像是程序员专属提示词。
-
-果不其然，第一版发出来之后，评论区立刻涌进了一堆反馈。
-
-VB老哥也是没闲着，紧赶慢赶当天就更新了第二版。
-
-直接把数据源和覆盖范围都扩大了一圈。
-
-提示词也变长了不少，从9行变成了35行：
-
-中文版也贴在这里：
-
-回顾我过去30天的工作记录，找出值得打包的重复手动工作流。
-
-按优先级使用以下数据源：最近的Codex会话和任务摘要；Codex Memories和汇总记录，找跨会话的重复模式；如果开了Chronicle，用它发现Codex以外的重复工作（仅用于发现，重要细节需回原始系统确认）；已有的skill、custom agent和automation，优先复用或扩展，不要重复造轮子。
-
-要广撒网：编码、调研、写作、规划、沟通、运营、分析、个人事务都算。
-
-只在以下条件都满足时才动手：发生过至少两次，或明确可能再发生且重来代价高；有稳定输入、可重复流程和明确输出；能实质改善速度、质量或可靠性；现有工具还没覆盖。选最小适用形式：Skill、Custom subagent、Automation、Skip。
-
-先输出候选清单，再创建高置信度的项目，最后告诉我创建了什么、跳过了什么、还需要更多证据的是什么。
-
-和第一版相比呢，主要有三处升级：
-
-数据源从「最近会话」扩展到了Memories和Chronicle，Codex能看到的东西也是多出不少。
-
-覆盖范围从编码任务扩到写作、规划、沟通、运营，几乎包含了你全部的工作场景。
-
-（不只是程序员哈，咱写文章的、做运营的、搞策划的都能用了）
-
-输出也从「给建议」升级成了「直接创建」，高置信度的条目，它自己就动手了。
-
-打包出来的结果分四种：
-
-每周重复的固定流程，做成Skill；
-需要专门角色去搞定的调查任务，派Subagent；
-定时触发、不需要人盯的检查，做成Automation；
-只发生过一次、边界模糊的，直接Skip，不打包。
-
-评论区的反应也印证了这条提示词的实用性。有网友当场喊话：
-
-「把它做成插件，叫 /dream，给我发版税。」
-
-VB本人也在评论里承认，确实应该做成正式插件，只是dream这个名字…他不太买账哈。
-
-不过也有网友质疑，回看30天的历史记录，这得烧多少token啊？？
-
-不得不说，token确实是大家最关心的问题…
-
-不过VB并没有给出回应，可能作为内部人员在token方面还是很有保障的吧。
-
-而且OpenAI最近一直在疯狂重置Codex的速率限制，感兴趣的友友们还是可以大胆一试的。
-
-还有网友试用后发现，他自动生成的skill有一半来自「在输入还没稳定的时候就做过两次的事」。
-
-结果维护这些抽象的成本比直接重做还高。
-
-他的问题是：到底是让Codex自己判断要不要打包，还是人工把关？
-
-它依赖哪些Codex新功能
-
-可能大家也看出来了。
-
-VB这条提示词涉及的Chronicl、Memory和Subagent，都是Codex这两个月猛猛连发的几个新功能。
-
-最新的是Chronicle，4月20日刚上线，目前还是预览版。
-
-它的作用是屏幕截取，如果你开了这个功能，Codex就能看到你在浏览器、Slack、邮件里做了什么。
-
-当然，它也可以看到你所做的重复工作了。">
-    <span>公司动态</span>
-    <h4>Codex自我蒸馏玩法火了！OpenAI员工亲授：复制粘贴就能让AI消灭重复劳动</h4>
-    <p>量子位</p>
-  </article>
-    <article class="brief glass" data-title="卡帕西Anthropic最新头衔：技术员工（MTS）" data-tag="公司动态" data-url="https://www.qbitai.com/2026/05/425304.html" data-detail="MTS（技术员工） @Anthropic
-
-哈？卡帕西在Anthropic只是个「技术员工」？？
-
-刚打开卡帕西新更新的X简介，发现多了这么一行——
-
-MTS（技术员工） @Anthropic。
-
-不是。。。
-
-OpenAI联创，特斯拉AI总监，YouTube上深度学习「金牌讲师」，全球被引用最多的AI研究者之一……
-
-到了你Anthropic，就是个「技术员工」？？！
-
-说话，Anthropic！！
-
-最早发现的网友之一，无语地发了这条帖子：
-
-Anthropic，你不会真打算就让卡帕西当个技术员工吧……
-
-直接爆了，全网都在围观这件事。
-
-对此，卡帕西倒是很淡定，直接评论区表态：
-
-Anthropic做得对。
-
-这么大的公司，却一点不搞职场官僚主义，挺好的。
-一群MTS（技术员工），瞄准一个使命。
-
-结果相当多的人不买账。
-
-呵呵，是啊，反正也没人需要读到「Andrej Karpathy」之后的内容。
-
-还有个小哥调侃：
-
-是挺有意思，要是直接给你挂个实习生的title，那就更有意思了哈。
-
-没想到，卡帕西直接拿Hinton当「挡箭牌」：
-
-没记错的话，Geoff Hinton在Google的头衔有段时间就是实习生（笑）。
-
-MTS，到底是个啥？？
-
-其实吧，不止卡帕西。最近加入Anthropic和OpenAI很多大佬，职级都清一色都是MTS。
-
-Peter Bailis。
-
-前WorkdayCTO，谷歌副总裁……
-
-如今？Anthropic的MTS，做强化学习。
-
-Mike Krieger。
-
-对，这人是Instagram联创兼CTO。
-
-后来离开Ins，自己做了个新闻聚合App，叫Artifact，同样是联创+CTO的标签。
-
-2024年5月，Anthropic高调宣布Mike Krieger加盟。当时的头衔还很闪耀：
-
-CPO。
-
-谁想到今年年初，也成Anthropic的MTS了……
-
-目前在做Claude Code。
-
-终是难逃一劫啊。
-
-太魔幻了。
-
-AI时代，看似平平无奇的头衔，却成了科技圈最有含金量的岗位之一。
-
-所以，这MTS，到底是个啥？
-
-其实吧，这事也不是Anthropic搞起来的。早在2023年，OpenAI总裁Greg Brockman便发过一条帖子——
-
-OpenAI创立之初，在职称上花了很长时间——我们不想把员工简单归类为研究员和工程师。
-然后，Alan Kay提出了一个天才的想法：“我们当年在Xerox PARC用的是Member of Technical Staff。”
-我们非常喜欢，所以直接拿过来用了。
-
-不过，真以为就是普通「技术员工」？
-
-此技术员工，非彼技术员工。
-
-2025年报道，美国劳工部的H-1B签证文件数据显示：
-
-Anthropic的MTS年薪在30万到40.5万美元之间，OpenAI的MTS年薪在21万到53万美元之间。
-
-Memberof Technical Staff头衔，Masterof Technical Staff级别薪水……
-
-早说啊！赚这么多，谁还管你是什么头衔！！
-
-但这背后有没有更深的考量？当然。
-
-全网汇总了下，大概有这三点好处——
-
-1、防猎头挖人。
-
-头衔都一样，竞争对手就没法通过头衔判断谁是L7谁是L5，推断一个员工具体做什么方向，定向挖人的难度直接上升。
-
-在AI人才狙击战的时代，可谓是很有必要了。
-
-2、文化认同。
-
-这点听着悬，其实也很practical。
-
-AI公司看重研究导向，统一头衔更加扁平化，方便研究落地。
-
-3、打破部门墙。
-
-这是我觉得最浪漫的一点。
-
-给一个人钉死一个标签，很容易把人圈住。比如听到文科生写代码这个组合，大多数人的第一反应多半是——这人懂什么。
-
-但事实上，AI时代很多技能的门槛都在被打破，创造力才是第一性原理。
-
-跨领域交叉的人，反而会有更大的参数量，更容易连点成线，灵光一闪。
-
-统一头衔，更有利于培养这种复合型人才。
-
-大概就是这些。
-
-听起来很美好，是吧？
-
-确实是，但其实我觉得，多少也有点「粉饰」的嫌疑。
-
-评论区反方的观点也基本是从这个角度出发的。
-
-关于文化这方面，网友直言：
-
-太尴尬，太虚伪，太做作了……
-这些说不在意职称的，一旦离职，就开始在领英自称上「副总裁」了（hehe）。
-
-如果从更实际的角度来看，也不太是能是个长久的事。
-
-一个很直观的事实是，整个商业史上，能在没有层级制度的情况下完成规模化的组织，一只手数得过来。
-
-比较耳熟能详的，有Valve（Steam背后的公司），早期的GitHub……
-
-但尴尬的是，这些案例的争议其实很大，都被吐槽过说没有宣传的那么美好，所谓扁平会变成隐性权力，表面没老板，实际有老员工、核心圈层……
-
-统一叫MTS，只是把这些差异从显性变成了隐性。">
-    <span>公司动态</span>
-    <h4>卡帕西Anthropic最新头衔：技术员工（MTS）</h4>
-    <p>量子位</p>
-  </article>
     </div>
   </section>
   <section class="section">
@@ -1015,243 +461,67 @@ Kimi Code团队成员Young正式出面，针对本次封号乌龙、误伤用户
     <h4>双标实锤，Kimi误判老外秒解封，国内付费用户炸锅</h4>
     <p>36氪</p>
   </article>
-    <article class="brief glass" data-title="5秒完成3D场景编辑，北大&amp;#038;港中文&amp;#038;上海AI Lab搞出VGGT-Edit，120倍加速太炸了" data-tag="应用落地" data-url="https://www.qbitai.com/2026/05/425870.html" data-detail="不再绕回2D
+    <article class="brief glass" data-title="AI已然成为未来游戏行业发展的必选项。" data-tag="应用落地" data-url="https://36kr.com/p/3827658881323649" data-detail="文丨贝果树
 
-VGGT-Edit团队 投稿
+编辑丨刘士武
 
-3D世界“会看”了，但还不会“改”。
+5月27日，2026年腾讯游戏发布会于晚上八点举办。在发布会上，腾讯从制作、发行、投资三个板块带来了42款游戏的新动态，其中包含15款新品，新品的数量相较于2025年发布会的24款有所减少。
 
-从NeRF到83D Gaussian Splatting，再到VGGT、π³这类前馈式3D重建模型，整个行业的进展速度明显加快——只需几张图片，就能在几秒内重建完整3D场景。
+与往届发布会不同的是，此次的发布会上，腾讯在AI游戏应用方面有了更多的输出。在游戏制作板块，腾讯介绍了如《和平精英》中的新AI队友小田、《王者荣耀》中的AI助手灵宝和电竞的AI解说等应用。
 
-但问题也恰恰出在这里。这些模型虽然已经能理解三维世界，却还不会修改三维世界。你可以让它重建一个房间，却很难真正告诉它：
+当然，这些AI在游戏中的应用案例绝大部分都已经在此前实现，
 
-把椅子移到窗边，删除中间那张椅子，把灰色皮沙发改成白色长毛沙发。
+最引人瞩目的，是在发布会最后的“One More Thing”环节，腾讯带来了三款更为重磅的AI相关产品发布，包括AI渲染方案「MagicDawn」、由AI参与的模拟经营游戏《数字景德镇·瓷都小匠》以及AI游戏创作平台「代号Craft」。
 
-更麻烦的是，一旦涉及复杂编辑，现有方法往往迌速崩採——某些角度里椅子消失了，换个视角椅子又重新出现；明明没改的背景，却跟着一起变形。
+当然，腾讯选择在今年的游戏发布会上放出“AI大招”，属于意料之中却又不乏惊喜的事。今年3月，腾讯就在GDC大会上带来了21场与AI相关的分享，此次发布会上，又介绍了多项游戏AI应用的进展。可以看见腾讯在AI应用探索方面的积累和决心。
 
-为应对这一挑战，来自北京大学、香港中文大学、上海AI Lab、NTU等机构的研究团队，提出了一套原生3D编辑框架：VGGT-Edit。
+MagicDawn基于神经网络实时推理技术，打破了传统全局光照的技术限制，将游戏光照表现提升到新的水平。产品已经完成和Arm的深度合作，适配新一代Arm GPU和内置AI加速器，能够在移动端落地高质量AI渲染。值得一提的是，选择把AI光照方案全面开源，MagicDawn这步棋走得很清晰，也侧面证明了腾讯对技术实力的信心。
 
-核心思路只有一句话——
+代号Craft的核心能力是通过自然语言交互生成游戏。用户输入简单文字描述，AI就能快速生成2D、3D等不同类型的游戏雏形，把创意转化为可玩内容。平台针对传统开发的美术产能痛点，内置完整AIGC工具，还免费开放超过一万种预制美术资产，降低创作门槛。该平台近期将开启首次测试。
 
-不再绕回2D，而是直接在3D空间里完成编辑。
+《数字景德镇·瓷都小匠》是腾讯和景德镇官方机构联合打造的瓷业经营小游戏，也是官方首款该主题的小游戏。玩家可以从学徒成长为窑主，通过经营收集历代名瓷，体验制瓷工艺和千年瓷业发展。游戏使用多模态AI数据集，结合了AI数字人、AI 3D生成等技术，计划在2026年夏季正式上线。
 
-在DeltaScene测试集上，VGGT-Edit在语义一致性、多视角稳定性、推理速度三个维度均超过现有方法，单次编辑仅需约5秒，最高实现120倍加速。
+整体看下来，腾讯在游戏AI领域的布局，已经从早期探索试错，走到了全链路落地的阶段。早期AI主要解决客服、内容审核等后端问题，后来逐步应用到NPC、赛事解说等用户体验功能，现在已经进入渲染、创作、玩法设计这些开发核心环节，开始真正改变游戏行业的生产方式。
 
-问题其实一直出在在2D
+这种从底层技术到上层产品的完整布局，会帮助腾讯在AI游戏时代建立明显的差异化优势，也给游戏行业提供了可参考的发展路径。
 
-目前大多数编3D的方法，本质上仍然是“2D思维”——先把场景拆成多弤2D图片，逐张编辑，再重新拼回3D。
+除了AI，在具体的游戏产品方面，腾讯此次发布会的重点，主要聚焦于玩法创新和全球化两个方向。
 
-但由于每个视角都是独立处理的，所以很容易出现：
+在玩法创新上，有像新品《粒粒的小人国》《虚幻》这样拓宽腾讯原有产品赛道，探索差异化玩法的新品。也在如《和平精英》《三角洲行动》等老游上作了玩法创新，延长产品生命力。持续创新、长线运营的思路，也在让更多游戏跻身“长青游戏”之列。
 
-一个视角里椅子已经删掉了；
-换个角度椅子又重新出现；
-背景区域跟着一起漂移；
-物体边缘出现重影和闪烁。
+而在全球化上，腾讯一方面在积极推动自研游戏出海，另一方面也通过投资和收购海外工作室，为玩家带来了更多维度的游戏体验。而即将测试或上线的游戏阵容中，包含《舞力全开：派对》《彩虹六号：攻势》《刺客信条：黑旗 记忆重置》三款育碧IP作品，这说明腾讯多年以来和育碧在资本、技术、产品端的合作正在进一步深化。
 
-*
+在产品发布中，出现了多个腾讯海外投资工作室产品的内容，也有多位海外开发者出镜参与发布。《控制：共振》将提供高质量中文本地化，《流放之路2》制作人也宣布将为国服玩家提供免费试玩活动。
 
-△3D编辑方法的比较
+而在自研游戏层面，也有如《湮灭之潮》的国产3A大作，实现了国产游戏的技术创新和文化表达。
 
-很多结果看起来更像“在不同角度硬P出来的图”，而不是真正稳定的3D空间。
+2023年来，中国游戏市场收入年均增长率达7%以上，于此同时，海外市场的增速却在放缓。在此背景下，腾讯等中国厂商正在以优秀的自研产品和海外投资发行产品，加重中国游戏市场在国际上的分量。
 
-对于机器人、AR/VR、空间智能这些方向来说，这几乎是致命问题——这些场景真正需要的，不是“某一个角度看起来对”，而是整个3D世界始终稳定一致。
+以下为腾讯此次发布会中，部分重要产品的介绍。
 
-原生3D编辑，开始从概念走向可用
+制作
 
-VGGT-Edit的核心思路非常直接：既然问题来自2D，那就不要再绕回2D。
+《粒粒的小人国》
 
-整个框架建立在VGGT-Like前馈式重建模型之上，继承了其快速、高效的3D表示能力。但有意思的是，团队并没有选择重新生成整个场景，而是提出了一种非常巧妙的机制：
+《粒粒的小人国》首曝于25年9月，是一款生活模拟类的新作。在《粒粒的小人国》中，玩家将会扮演一位因意外变小的主角，与小人“粒粒”们一同进行建造、采集、烹饪等活动。在社交方面，《粒粒的小人国》主打轻量化的陪伴式社交，玩家可以选择与真人玩家进行互动，也可以与AI队友共同完成任务。在发布会上，腾讯也宣布了新的“粒粒“种族的相关消息。
 
-残差场预测（Residual Field Prediction）。
+今年3月，《粒粒的小人国》开启首测，首测期间，游戏首测的消息登上了各大平台的热搜榜。截至目前，《粒粒的小人国》在官网上的预约量已经超过一千万。
 
-简单理解就是：模型先保留原始场景稳定的3D结构，然后只学习“哪里需要变化”，例如：
+生活模拟作为当今各大厂商都有布局的热门赛道，《粒粒的小人国》也必将于同期上线的其它产品展开竞争。
 
-椅子往右移动；
-沙发材质发生变化；
-删除某个物体；
-新增一个家具。
+《粒粒小人国》
 
-这些变化，都被表示成了：新场景 = 原场景 + 局部残差变化
-
-这个设计有个非常重要的好处——因为大部分区域本来就不需要变化，所以模型不用重新“生成整个世界”，只需修改局部，结果就是没改动的背景区域会非常稳定。
-
-这也是VGGT-Edit和很多现有方法最明显的区别之一。
-
-文本语义，第一次真正开始“对齐”3D空间
-
-研究团队发现，如果只是简单把一句文本输入模型，很容易出现一种情况——模型知道“你想改什么”，但不知道“该改哪里”。
-
-为了解决这个问题，VGGT-Edit设计了一套关键机制：
-
-深度同步文本注入（Depth-Synchronized Text Injection）
-
-本质上可以理解成让文本语义和3D空间特征，在同一个深度层级里持续同步。
-
-传统方法通常只在前面注入一次文本信息，但VGGT-Edit会在多个关键层持续融合文本语义，这样模型在整个3D生成过程中，始终知道：
-
-当前应该修改哪个区域；
-修改目标是什么；
-空间位置在哪里。
-
-与此同时，团队还专门设计了一套“视角重要性加权”——因为并不是所有视角都同样可靠，有些角度可能被遁挡，有些视角只能看到半个物体。
-
-VGGT-Edit会自动判断哪个视角更值得信任，最终让多视角编辑结果更加稳定。
-
-一个真正面向“3D编辑”的编辑头
-
-除了整体框架之外，VGGT-Edit还有一个非常关键的部分——专门面向3D编辑任务设计的编辑头。
-
-研究团队发现，对于VGGT-Like模型来说，原本的重建Head更关注“如何恢复场景”，但3D编辑真正需要解决的问题是：如何在保持整体稳定的情况下，只修改局部区域。
-
-因此，VGGT-Edit额外设计了一套编辑分支，专门预测场景中的局部变化。
-
-这个编辑Head会直接作用于3D表示空间，并输出对应的残差场变化。本质上，它学习的是：
-
-哪些区域应该保持不变；
-哪些区域需要发生编辑；
-编辑后如何保持多视角一致。
-
-相比直接重新生成整个场景，这种方式更加稳定，也更加高效——这也是让VGGT-Like前馈重建模型具有编辑能力的关键一步。
-
-一个10万规模的数据集，专门训练“3D编辑”
-
-为了训练VGGT-Edit，团队专门构建了一个新3D编辑数据集DeltaScene，规模接近10万组，覆盖客厅、办公室、住宅、商业空间等多种场景。
-
-△DeltaScene数据集概述">
+《虚环》">
     <span>应用落地</span>
-    <h4>5秒完成3D场景编辑，北大&amp;#038;港中文&amp;#038;上海AI Lab搞出VGGT-Edit，120倍加速太炸了</h4>
-    <p>量子位</p>
-  </article>
-    <article class="brief glass" data-title="触觉具身来了个梦之队：天使轮近亿" data-tag="应用落地" data-url="https://www.qbitai.com/2026/05/425660.html" data-detail="触觉具身来了个梦之队：天使轮近亿
-
-复旦系具身新星，想让机器人真正会“触摸”
-
-过去两年，具身智能的资源与研究重心高度集中于视觉感知，聚焦于“让机器人看懂世界”。
-
-但在真实精细化操作场景中，核心挑战往往不在视觉识别本身，而在物理接触后的交互环节。
-
-能够完成USB接口的视觉对准，却难以判断插入过程中的受力变化与合适力度；能够夹起衣物，却无法实时感知布料的滑移状态与张力分布，难以完成精准的褶皱整理。
-
-绝大多数精细化操作的失败节点，并非视觉识别阶段，而是物理接触发生之后的交互过程。
-
-这一行业共性痛点，正是新智具身选择触觉具身智能赛道的核心切入点。
-
-5月27日，上海新智具身智能科技有限公司（NeoteAI，以下简称“新智具身”）宣布完成近亿元天使轮融资，本轮由上海国投旗下上海科创集团，以及复旦科创联合领投，上海科创集团旗下策源基金等共同投资，多维资本担任独家财务顾问。
-
-据公开信息显示，新智具身源自复旦大学可信具身智能研究院，背靠产学研与地方政策双重加持，作为复旦大学与静安区战略合作的重要落地成果，公司在初创期便获得静安区科经委与市北高新集团的大力培育，先后获得静安区战略性资金及上海市经信委促进产业高质量发展专项资金的支持，上海市科委也针对其核心视触觉传感器的研发给予了专项经费支持，全面加速公司的技术攻关进程。
-
-在行业持续押注视觉、VLA和大模型的时候，新智具身选择把一个更底层的物理问题放回机器人训练主干：
-
-机器人不只要看懂世界，还要在碰到世界之后，知道自己碰到了什么、碰得对不对、下一步该怎么动。
-
-简单说，它赌的是触觉。
-
-机器人缺的不只是视觉，还有手感
-
-机器人精细化操作的绝大多数失败，都发生在与物理世界产生接触的瞬间及后续过程。
-
-对于人类而言，很多判断几乎是下意识完成的：
-
-手指触碰到接口边缘时，手腕会根据阻力反馈自然微调角度；
-拿起纸杯时，指尖会依据杯壁形变实时调整夹持力度；
-整理布料时，手部会顺着张力变化动态改变拉动方向。
-
-而这些，正是当前机器人感知体系中缺失的关键一环。
-
-新智具身的核心行业判断是，具身智能正从单一“视觉中心主义”，向“视觉+触觉双中心”的感知体系演进：视觉负责全局定位与语义理解，触觉则承担接触后的物理状态反馈与动态调整。
-
-只要机器人与物理世界产生交互接触，触觉信息就是不可或缺的核心感知要素。
-
-但触觉感知的落地，绝非简单加装一个传感器就能实现。
-
-若触觉信息仅停留在孤立的硬件读数层面，便无法真正转化为机器人的操作能力。
-
-新智具身的核心目标，是将触觉感知转化为可训练的标准化数据，使其深度融入具身模型的训练与推理全链路。
-
-新智具身的核心团队源自复旦大学可信具身智能研究院，具备深厚的产学研融合基因。
-
-CEO赵世豪本硕毕业于复旦大学，博士就读于香港大学，曾作为核心研究员在微软全球研究院、阿里通义实验室深耕前沿模型研发，研究覆盖视频世界模型、生成式模型；
-
-首席科学家吴祖煊为复旦大学可信具身智能研究院副院长，曾任职于Meta，长期深耕视频模型、多模态模型等核心领域；
-
-COO董道国则是兼具学术与产业经验的跨界人才，具有近20年的产业界经历，曾任华为荣耀Magic一代首席架构师，现任复旦大学可信具身智能研究院研究员，主要为公司的技术商业化保驾护航。
-
-正是基于团队在多模态模型领域的深厚积累，新智具身并未选择单一硬件的切入路径，而是同步布局视触觉传感器、精细化数据采集平台与触觉具身大模型三大核心板块，构建完整的技术闭环。
-
-先把触觉信号采回来
-
-新智具身技术落地的首要环节，是实现机器人末端执行器接触信息的高精度采集。
-
-公司自主研发的视触觉传感器，可全面适配工业夹爪与灵巧手等末端执行器，能够精准采集接触过程中的力值、滑移、形变与边界轮廓等多维度物理信息。
-
-△新智具身·视触觉传感器
-
-这一技术路线的核心在于视触觉感知范式。
-
-传统压阻式、电容式触觉传感器多输出低维离散点信号，仅能反馈单点受力状态，无法完整还原接触面的几何轮廓、滑移方向、表面纹理与形变边界等关键信息。
-
-更为关键的是，此类方案的感知性能上限在硬件出厂时即已基本固化，难以通过后续算法迭代实现能力提升。
-
-视触觉技术采用全新的感知原理：传感器内部集成微型光学相机，通过拍摄柔性硅胶表层在接触物体时产生的亚毫米级形变图像，再由端侧深度学习模型解耦出六维力信息、滑移轨迹、物体表面轮廓与像素级力场分布。
-
-这一技术路线具备两大核心优势：
-
-其一，感知信息密度显著提升，能够提供传统传感器无法实现的全域接触表征；
-
-其二，输出数据格式与视觉数据高度兼容，可与现有Transformer架构及视觉数据实现自然融合，大幅降低了触觉模态接入已有具身模型的技术门槛。">
-    <span>应用落地</span>
-    <h4>触觉具身来了个梦之队：天使轮近亿</h4>
-    <p>量子位</p>
+    <h4>AI已然成为未来游戏行业发展的必选项。</h4>
+    <p>36氪</p>
   </article>
     </div>
   </section>
   <section class="section">
     <div class="section-head"><b>IV.</b><h3>治 理</h3><em>Safety & Governance</em></div>
     <div class="grid">
-    <article class="brief glass" data-title="创始人吴同认为，AI对于游戏行业最大的变革从来不是提升了多少生产力效率，而是改变了生产关系。" data-tag="治理安全" data-url="https://36kr.com/p/3827585618154118" data-detail="文丨刘士武
-
-封面来源 | Funloom 官网
-
-36氪获悉，AI内容共创平台公司北京库兰织梦科技有限公司（以下简称「库兰织梦」），已于近日完成数千万元人民币Pre-A融资。本轮融资由晴澜家族办公室领投，上海天使会跟投，此前投资人包括奇绩创坛、盛大网络&amp;连尚网络创始人陈大年。本轮融资后，公司估值已达到2亿元，资金将用于产品研发升级和团队扩张。
-
-库兰织梦成立于2023年，创始人吴同曾任职Unity，拥有5年游戏行业创业经验，推出《12世纪的黎凡特》《活过今晚》《库兰精灵》等十余款游戏，运营游戏发行自媒体“咕咕同”获得数百万播放，作品曾获吉比特、CUSGA、电魂等多个游戏创作大赛最佳玩法奖，上榜25Under25 AI创业者榜单；CTO张吉豪在像素软件作为主程研发《勇者大冒险》《寻仙》等游戏，后出任阿里巴巴高级技术专家，主导从零搭建淘宝特价版搜索、推荐、广告引擎平台，参与1688、淘宝搜索推荐引擎建设；COO郑君凯曾任百度游戏总经理，曾创办上海快盘科技并完成数轮融资，拥有20年游戏行业从业经历。
-
-目前团队正在持续吸引游戏、AI行业的顶级人才加入，另有3位核心成员曾担任大厂、独角兽企业高管，均带出过亿级收入爆款。
-
-Funloom核心团队
-
-作为一家AI内容共创平台公司，库兰织梦目前推出的核心产品是一站式AI内容共创引擎「Funloom AI」，公司致力于研究AI技术在内容创作领域的各类落地场景，目标是降低内容创作门槛，让创作回归创意本身，内容载体涵盖游戏、视频、图文。
-
-创始人吴同认为，AI对于游戏行业最大的变革从来不是提升了多少生产力效率，而是改变了生产关系：把游戏内容生产从过去必须依托公司的大型组织模式，下放到个人和小团队，让更多有创意的人能以极低的成本把自己的想法落地，开拓长尾市场带来新的增长点。
-
-库兰织梦最早从AI VibeCoding生成游戏切入，推出了RetainerAI游戏生成工具，但团队很快发现了这条路线的核心问题：绝大部分用户无法写清楚提示词，也不懂专业知识，很难通过纯工具直接将想法落地成一款合格的游戏。
-
-“每个人都能讲出一种感觉，但现有的工具无法实现这种感觉，AI也猜不到。”吴同告诉36氪，这是直接导致纯vibe coding路线难以做出好游戏的关键原因。和很多追求一步到位做端到端游戏生成的团队不同，Funloom选择把产品迭代拆成了一个个台阶，一步一步往最终目标靠近。
-
-“我们不会说把产品马上做成最终形态，立刻就让任何人几句话生成3A大作，那不现实。”吴同表示，团队现阶段的核心目标非常明确：帮助本来就有想法、有创意的创作者砍掉创意之外所有不必要的沉没成本，让他们只需要花心思打磨内容本身即可。
-
-为了实现这个目标，库兰织梦把一款游戏的核心要素拆解为四个原子能力——剧情、视觉、数值、交互，逐个突破。
-
-内容制作工作台
-
-剧情部分已经率先解决：团队通过“认知工程”模式，结合专业写作者的合作，把小说戏剧创作中制造冲突、构建起伏、设计明线暗线的方法抽象成模式，训练出的生成能力远高于原生大模型，能让剧情始终保持吸引力，避免落入俗套。
-
-接下来即将要落地的是视觉部分。现在AI生图已经有成熟方案，团队要做的就是把生成的美术素材自动适配到现有游戏工程中，把原本粗糙的H5白膜一键替换成美术渲染效果，通过定位识别法拆分UI元素、背景图，完成自动替换，让生成游戏的视觉体验焕然一新。
-
-内容制作工作台
-
-再往后的是数值和交互。和很多人把数值当成精密计算问题不同，库兰织梦团队认为，数值本质上是“剧情的延伸”，最终目的是服务于用户的心流体验和情绪起伏。什么时候让玩家战力增速放缓制造卡点，什么时候给玩家神器突破瓶颈营造爽点，这些都需要和剧情系统深度绑定，而非单纯的函数计算，团队正围绕“心流服务”重构数值生成逻辑。
-
-在吴同看来，游戏行业这么多年来之所以同质化严重、换皮横行，本质原因还是生产关系导致的：过去做一款游戏至少要砸几百万进去，团队不得不追求确定性，只能去换皮验证过的成熟玩法，不敢去碰新鲜有创意但没被验证过的题材。
-
-部分Funloom作者在社交媒体上宣传游戏
-
-但AI时代来了之后，生产门槛被拉低，一个人就能做出可玩性较高的游戏。“很多题材不是没有用户，只是过去根本不可能立项。”吴同举例，做历史题材大家都扎堆做三国，因为三国认知度高、受众基数大，做项目立项能通过，但为什么鲜有人做明朝背景的游戏？不是明朝没有受众，只是在过去的生产关系下，没人敢赌。现在AI把成本打下来了，小团队甚至个人就能做，例如Funloom自研的《崇祯模拟器》刚一出来就获得了大量玩家的认可，证明题材的需求一直都在，只是缺一个落地的机会。">
-    <span>治理安全</span>
-    <h4>创始人吴同认为，AI对于游戏行业最大的变革从来不是提升了多少生产力效率，而是改变了生产关系。</h4>
-    <p>36氪</p>
-  </article>
-    <article class="brief glass" data-title="句句提 AI，字字在说人。" data-tag="治理安全" data-url="https://36kr.com/p/3827500620652800" data-detail="2026 年 5 月 15 日，教宗良十四世在一份长达四万余字的文件上签下了自己的名字。那一天，恰好是教宗良十三世发布《新事》通谕整整 135 周年，1891 年签署的那份文件，是天主教会第一次正式回应工业革命对劳动秩序的冲击。
+    <article class="brief glass" data-title="教皇发布首份AI通谕：4万字10个观点，AI焦虑被说透了" data-tag="产品发布" data-url="https://36kr.com/p/3827500620652800" data-detail="2026 年 5 月 15 日，教宗良十四世在一份长达四万余字的文件上签下了自己的名字。那一天，恰好是教宗良十三世发布《新事》通谕整整 135 周年，1891 年签署的那份文件，是天主教会第一次正式回应工业革命对劳动秩序的冲击。
 
 十天后，也就是 2026 年的 5 月 25 日，良十四世亲自出席发布会，正式向世界颁布这份题为《Magnifica Humanitas》的通谕，这是天主教会有史以来，第一次以人工智能为核心议题发布通谕。在这个发布会现场，除了枢机主教与神学教授之外，还有 Anthropic 联合创始人 Chris Olah。
 
@@ -1302,41 +572,9 @@ AI 提供了许多令人惊叹的可能性，但即便是设计者，对生成�
 4、AI 不能被当成人类智能，更不能被当成道德主体
 
 AI不是一堆数据，而是拥有自由、关系和道德责任的主体。">
-    <span>治理安全</span>
-    <h4>句句提 AI，字字在说人。</h4>
-    <p>36氪</p>
-  </article>
-    <article class="brief glass" data-title="华为发布AI DC数据基础设施全栈方案，加速行业智能化跃升" data-tag="产品发布" data-url="https://www.qbitai.com/2026/05/425296.html" data-detail="5月21日，以“数据觉醒，存力跃迁”为主题的2026华为创新数据基础设施论坛在巴黎举行。华为公司副总裁、数据存储产品线总裁袁远发表主题演讲，正式发布AI DC数据基础设施全栈方案，加速行业智能化跃升。
-
-华为公司副总裁、数据存储产品线总裁袁远
-
-当下，AI正深刻改变企业运营模式。Agent加速普及，成为新型数字生产力主体，逐步成长为企业的常态化“数字员工”；同时，AI应用持续深化，企业Token消耗量迎来爆发式增长。袁远指出，企业要加速AI落地，需推动现有IT架构向AI DC数据基础设施快速演进，围绕数据湖、知识与记忆平台、算力、模型、Agent框架与数据韧性等核心方向，开展系统性规划与建设。
-
-基于此，华为正式发布AI DC数据基础设施全栈方案，旨在助力企业加速推进AI数据中心建设，实现AI规模化落地。
-
-AI数据湖
-
-OceanStor Pacific全闪分布式存储以11PB/2U业界领先高容量密度，实现最优TCO存储海量数据；依托DME Omni-Dataverse统一数据空间，使能多模态、跨站点数据实时入湖、全局可视可管，同时具备千亿千维向量数据的秒级检索能力，实现高质量数据汇聚与供给。
-
-知识与记忆平台
-
-面向超大规模推理集群场景，华为推出业界首个支持异构算力的上下文记忆存储CMS（Context Memory Storage），支持KV语义直通或采用专用DPU进行语义卸载，可扩展为PB级共享KV Cache池，降低推理首Token时延90%。
-面向企业AI推理场景，华为首创“3+1”AI数据平台，集成了超95%检索精度的知识库、KV Cache加速与持续进化的记忆库，并由UCM技术实现调度与管理，提升30%推理精准性。
-
-模型工程与资源调度
-
-华为ModelEngine具备模型开箱即用、模型网关的能力，可支持0码适配新模型、一键部署模型；此外，结合算力资源细粒度切分与智能调度，最大可实现XPU卡1:10切分，实现“一卡多用”，提升资源利用率。
-
-Agent框架华为ModelEngine Nexent智能体平台可通过自然语言交互方式直接生成Agent，大幅降低开发门槛，使Agent上线周期缩短80%；此外，支持对Skill、提示词、记忆实现自动优化，助力Agent持续演进、越用越聪明。
-
-数据韧性平台针对Agent、模型、平台与基础设施等不同维度的潜在数据安全风险，通过构建防滥用、防投毒、防篡改、防勒索的端到端数据保护方案，全面守护AI数据资产安全。
-
-“AI为IT产业带来了无限机遇，”袁远表示，“AI的下半程在于数据。华为数据存储将坚持技术创新，持续沉淀AI行业化落地经验，和全产业共同努力，帮助客户加速迈向智能时代。”
-
-_版权所有，未经授权不得以任何形式转载及使用，违者必究。_">
     <span>产品发布</span>
-    <h4>华为发布AI DC数据基础设施全栈方案，加速行业智能化跃升</h4>
-    <p>量子位</p>
+    <h4>教皇发布首份AI通谕：4万字10个观点，AI焦虑被说透了</h4>
+    <p>36氪</p>
   </article>
     </div>
   </section>
@@ -1363,8 +601,7 @@ document.querySelectorAll('.brief,.main').forEach(el=>{
     mLink.href=el.dataset.url||'#';
     mLink.style.display=el.dataset.url?'inline-block':'none';
     const detail=el.dataset.detail||'暂无详细内容';
-    mBody.innerHTML='<p>'+detail.replace(/
-/g,'</p><p>').replace(/<\/p><p>$/, '')+'</p>';
+    mBody.textContent=detail;
     modal.classList.add('open');
   });
 });
