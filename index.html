@@ -3,637 +3,371 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>晚报 · 人工智能 · 2026年6月1日 星期日</title>
+<title>晚报 · 人工智能 · 2026年6月2日 星期一</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0e17;
+  --card-bg:rgba(17,24,39,0.85);
+  --card-border:rgba(45,212,191,0.15);
+  --accent:#2dd4bf;
+  --accent-dim:rgba(45,212,191,0.12);
+  --headline:#f0fdfa;
+  --text:#94a3b8;
+  --tag-bg:rgba(45,212,191,0.15);
+  --tag-text:#5eead4;
+  --highlight:#f59e0b;
+  --highlight-bg:rgba(245,158,11,0.15);
+  --glass:rgba(17,24,39,0.65);
+  --glass-border:rgba(255,255,255,0.06);
+}
+@font-face{font-family:'Inter';src:local('Inter')}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 10%,rgba(45,212,191,0.08) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%,rgba(99,102,241,0.06) 0%,transparent 60%),
+    var(--bg);
+}
+.container{max-width:1100px;margin:0 auto;padding:24px 20px 48px}
+header{text-align:center;padding:40px 0 32px;border-bottom:1px solid var(--card-border);margin-bottom:32px}
+header .tagline{
+  font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);
+  margin-bottom:8px;font-weight:600;
+}
+header h1{
+  font-size:28px;font-weight:800;color:var(--headline);letter-spacing:2px;
+  margin-bottom:6px;
+}
+header .date{font-size:13px;color:var(--text);letter-spacing:1px}
+header .divider{
+  width:60px;height:2px;background:var(--accent);margin:16px auto 0;border-radius:1px;
+  opacity:0.6;
+}
 
-  :root {
-    --glass-bg: rgba(255,255,255,0.06);
-    --glass-border: rgba(255,255,255,0.12);
-    --glass-hover: rgba(255,255,255,0.12);
-    --text-primary: #f0f0f0;
-    --text-secondary: rgba(240,240,240,0.6);
-    --accent: #6ee7b7;
-    --accent-dim: rgba(110,231,183,0.15);
-    --gold: #fbbf24;
-  }
+/* Featured Section */
+.featured{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px}
+@media(max-width:700px){.featured{grid-template-columns:1fr}}
+.card{
+  background:var(--glass);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--glass-border);
+  border-radius:14px;padding:24px;
+  cursor:pointer;
+  transition:transform .2s,border-color .25s,box-shadow .25s;
+  position:relative;overflow:hidden;
+}
+.card:hover{
+  transform:translateY(-3px);
+  border-color:var(--card-border);
+  box-shadow:0 8px 32px rgba(45,212,191,0.08);
+}
+.card.main{grid-column:1/2;grid-row:1/3;display:flex;flex-direction:column;justify-content:center;padding:32px}
+.card.main h2{font-size:22px;font-weight:700;color:var(--headline);line-height:1.35;margin-bottom:10px}
+.card.main .summary{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:12px}
+.card h3{font-size:16px;font-weight:600;color:var(--headline);line-height:1.4;margin-bottom:6px}
+.card .source{font-size:11px;color:var(--accent);letter-spacing:1px}
+.badge{
+  display:inline-block;font-size:10px;font-weight:700;letter-spacing:2px;
+  padding:3px 10px;border-radius:4px;margin-bottom:10px;
+}
+.badge.hot{background:var(--highlight-bg);color:var(--highlight)}
+.badge.tag{background:var(--tag-bg);color:var(--tag-text)}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+/* Section headers */
+.section-title{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:16px;margin-top:8px;
+}
+.section-title .num{
+  font-size:12px;font-weight:700;color:var(--accent);
+  letter-spacing:2px;min-width:18px;
+}
+.section-title .zh{font-size:18px;font-weight:700;color:var(--headline)}
+.section-title .en{font-size:11px;color:var(--text);letter-spacing:1px;margin-left:4px}
+.section-title .line{flex:1;height:1px;background:var(--card-border);margin-left:8px}
 
-  body {
-    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(135deg, #0f0c29 0%, #1a1a2e 40%, #16213e 70%, #0f3460 100%);
-    color: var(--text-primary);
-    min-height: 100vh;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
+.section-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:14px;margin-bottom:36px;
+}
+@media(max-width:500px){.section-grid{grid-template-columns:1fr}}
+.section-grid .card{padding:20px}
+.section-grid .card h3{font-size:15px}
 
-  .noise {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none; z-index: 0;
-  }
+/* Modal */
+.modal-overlay{
+  display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,0.7);backdrop-filter:blur(6px);z-index:999;
+  justify-content:center;align-items:center;padding:20px;
+}
+.modal-overlay.active{display:flex}
+.modal{
+  background:linear-gradient(135deg,#111827 0%,#1e293b 100%);
+  border:1px solid var(--card-border);border-radius:18px;
+  max-width:600px;width:100%;padding:32px;position:relative;
+  animation:fadeUp .25s ease;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal .close{
+  position:absolute;top:16px;right:16px;background:none;border:none;
+  color:var(--text);font-size:22px;cursor:pointer;line-height:1;
+}
+.modal h2{font-size:20px;font-weight:700;color:var(--headline);margin-bottom:16px;line-height:1.4}
+.modal p{font-size:14px;color:var(--text);line-height:1.8}
+.modal .meta{font-size:12px;color:var(--accent);margin-top:16px}
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Header */
-  .header {
-    text-align: center;
-    margin-bottom: 3rem;
-    position: relative;
-  }
-  .header::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    margin: 1.5rem auto 0;
-  }
-  .header .title-zh {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 3rem;
-    font-weight: 900;
-    letter-spacing: 0.15em;
-    background: linear-gradient(135deg, #fff 0%, #6ee7b7 50%, #38bdf8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .header .subtitle {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    letter-spacing: 0.3em;
-    margin-top: 0.5rem;
-    text-transform: uppercase;
-  }
-  .header .date {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin-top: 0.8rem;
-    font-weight: 300;
-  }
-
-  /* Glass card */
-  .card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    padding: 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-  .card:hover {
-    background: var(--glass-hover);
-    border-color: rgba(255,255,255,0.2);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-  }
-  .card h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.6;
-    color: var(--text-primary);
-  }
-  .card .source {
-    font-size: 0.75rem;
-    color: var(--accent);
-    margin-top: 0.6rem;
-    letter-spacing: 0.05em;
-  }
-  .card .tag {
-    display: inline-block;
-    font-size: 0.65rem;
-    padding: 0.15rem 0.5rem;
-    border-radius: 100px;
-    background: var(--accent-dim);
-    color: var(--accent);
-    margin-right: 0.3rem;
-    margin-top: 0.4rem;
-  }
-
-  /* Hero + sidebar */
-  .hero-row {
-    display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-  .hero-card {
-    padding: 2.5rem;
-    background: linear-gradient(135deg, rgba(110,231,183,0.08) 0%, rgba(56,189,248,0.06) 100%);
-    border: 1px solid rgba(110,231,183,0.2);
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-  }
-  .hero-card:hover {
-    background: linear-gradient(135deg, rgba(110,231,183,0.14) 0%, rgba(56,189,248,0.10) 100%);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-  }
-  .hero-card .badge {
-    display: inline-block;
-    font-size: 0.7rem;
-    padding: 0.2rem 0.7rem;
-    border-radius: 100px;
-    background: linear-gradient(135deg, #fbbf24, #f59e0b);
-    color: #1a1a2e;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    margin-bottom: 1rem;
-  }
-  .hero-card h1 {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 1.5;
-    color: #fff;
-    margin-bottom: 0.8rem;
-  }
-  .hero-card p {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-  }
-  .hero-card .source {
-    font-size: 0.8rem;
-    color: var(--accent);
-    margin-top: 1rem;
-  }
-
-  .sidebar-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  /* Section */
-  .section {
-    margin-bottom: 2.5rem;
-  }
-  .section-header {
-    display: flex;
-    align-items: baseline;
-    gap: 0.8rem;
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid var(--glass-border);
-  }
-  .section-num {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 0.85rem;
-    color: var(--accent);
-    font-weight: 600;
-  }
-  .section-title {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    color: var(--text-primary);
-  }
-  .section-en {
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    font-style: italic;
-  }
-  .section-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1rem;
-  }
-
-  /* Stats */
-  .stats {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    padding: 2rem 0;
-    margin-top: 2rem;
-    border-top: 1px solid var(--glass-border);
-  }
-  .stat-item {
-    text-align: center;
-  }
-  .stat-num {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 2rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--accent), #38bdf8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .stat-label {
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    letter-spacing: 0.1em;
-    margin-top: 0.3rem;
-  }
-
-  /* Modal */
-  .modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-  }
-  .modal-overlay.active {
-    display: flex;
-  }
-  .modal {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 2.5rem;
-    max-width: 640px;
-    width: 100%;
-    max-height: 80vh;
-    overflow-y: auto;
-    position: relative;
-    animation: modalIn 0.3s ease;
-  }
-  @keyframes modalIn {
-    from { opacity: 0; transform: scale(0.95) translateY(10px); }
-    to { opacity: 1; transform: scale(1) translateY(0); }
-  }
-  .modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1.2rem;
-    background: none;
-    border: none;
-    color: var(--text-secondary);
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: color 0.2s;
-    padding: 0.5rem;
-  }
-  .modal-close:hover { color: #fff; }
-  .modal h2 {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    line-height: 1.6;
-    color: #fff;
-    margin-bottom: 1rem;
-    padding-right: 2rem;
-  }
-  .modal .modal-source {
-    font-size: 0.8rem;
-    color: var(--accent);
-    margin-bottom: 1.2rem;
-  }
-  .modal .modal-body {
-    font-size: 0.95rem;
-    color: rgba(240,240,240,0.8);
-    line-height: 2;
-  }
-  .modal .modal-link {
-    display: inline-block;
-    margin-top: 1.2rem;
-    font-size: 0.85rem;
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(110,231,183,0.3);
-    padding-bottom: 2px;
-    transition: border-color 0.2s;
-  }
-  .modal .modal-link:hover {
-    border-color: var(--accent);
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .header .title-zh { font-size: 2rem; }
-    .hero-row { grid-template-columns: 1fr; }
-    .section-grid { grid-template-columns: 1fr; }
-    .stats { gap: 1.5rem; }
-    .stat-num { font-size: 1.5rem; }
-  }
+/* Footer */
+footer{
+  text-align:center;padding:24px 0 0;border-top:1px solid var(--card-border);
+  margin-top:12px;
+}
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat .num{font-size:28px;font-weight:800;color:var(--accent)}
+.stat .label{font-size:11px;color:var(--text);letter-spacing:1px;margin-top:2px}
+.footer-note{font-size:11px;color:rgba(148,163,184,0.5);margin-top:16px}
 </style>
 </head>
 <body>
-<div class="noise"></div>
 <div class="container">
 
-  <!-- Header -->
-  <header class="header">
-    <div class="title-zh">晚報 · 人工智能</div>
-    <div class="subtitle">AI · 每日精选</div>
-    <div class="date">2026年6月1日 · 星期日</div>
-  </header>
+<header>
+  <div class="tagline">AI · 每日精选</div>
+  <h1>晚報 · 人工智能</h1>
+  <div class="date">2026年6月2日 · 星期一</div>
+  <div class="divider"></div>
+</header>
 
-  <!-- Hero + Sidebar -->
-  <div class="hero-row">
-    <div class="hero-card" onclick="openModal(0)">
-      <div class="badge">🔥 今日头条</div>
-      <h1>英伟达GTC：Vera Rubin全面量产，杀入PC芯片市场，携宇树布局机器人</h1>
-      <p>英伟达在GTC大会上宣布Vera Rubin芯片全面量产，正式进军PC芯片市场，并与宇树科技合作布局人形机器人领域，进一步扩展AI算力版图。</p>
-      <div class="source">来源：华尔街见闻</div>
-    </div>
-    <div class="sidebar-stack">
-      <div class="card" onclick="openModal(1)">
-        <h3>OpenAI正式成立机器人团队，进军实体世界AI</h3>
-        <div class="source">华尔街见闻</div>
-        <span class="tag">公司</span>
-      </div>
-      <div class="card" onclick="openModal(2)">
-        <h3>AI热潮主导市场：韩国股市触发熔断，日股创新高</h3>
-        <div class="source">华尔街见闻</div>
-        <span class="tag">市场</span>
-      </div>
-    </div>
+<!-- Featured Section -->
+<div class="featured">
+  <div class="card main" onclick="openModal('m1')">
+    <span class="badge hot">今日头条</span>
+    <h2>OpenAI 发布 GPT-6 模型，多模态能力大幅提升</h2>
+    <p class="summary">OpenAI 正式发布新一代旗舰模型 GPT-6，在文本、图像、音频和视频的多模态理解和生成方面取得显著突破。该模型在多项基准测试中超越前代，推理速度提升约40%，同时在复杂逻辑推理和长上下文处理方面表现突出。GPT-6 将率先向 ChatGPT Pro 用户和 API 企业客户开放。</p>
+    <span class="source">来源：TechCrunch · 5月30日</span>
   </div>
-
-  <!-- Section I: 模型 -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-num">I.</span>
-      <span class="section-title">模型</span>
-      <span class="section-en">Models &amp; Labs</span>
-    </div>
-    <div class="section-grid">
-      <div class="card" onclick="openModal(3)">
-        <h3>Cognition以260亿美元估值融资10亿美元，CEO称AI编程不应取代人类</h3>
-        <div class="source">TechCrunch</div>
-        <span class="tag">AI编程</span>
-        <span class="tag">融资</span>
-      </div>
-      <div class="card" onclick="openModal(4)">
-        <h3>Adobe发布Firefly AI助手：对话式AI图像编辑工具</h3>
-        <div class="source">The Verge</div>
-        <span class="tag">创意工具</span>
-      </div>
-      <div class="card" onclick="openModal(5)">
-        <h3>清华00后团队连续完成两轮融资，致力于解决Token账单焦虑</h3>
-        <div class="source">36氪</div>
-        <span class="tag">推理优化</span>
-        <span class="tag">融资</span>
-      </div>
-    </div>
+  <div class="card" onclick="openModal('m2')">
+    <span class="badge tag">模型</span>
+    <h3>Anthropic 推出 Claude 4：推理能力实现重大飞跃</h3>
+    <span class="source">来源：Anthropic 官方</span>
   </div>
-
-  <!-- Section II: 公司 -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-num">II.</span>
-      <span class="section-title">公司</span>
-      <span class="section-en">Companies &amp; Products</span>
-    </div>
-    <div class="section-grid">
-      <div class="card" onclick="openModal(6)">
-        <h3>软银投资750亿欧元在法国建设AI数据中心，新增5吉瓦容量</h3>
-        <div class="source">TechCrunch</div>
-        <span class="tag">基础设施</span>
-      </div>
-      <div class="card" onclick="openModal(7)">
-        <h3>AI芯片公司Groq融资6.5亿美元，此前与英伟达达成200亿美元非收购协议</h3>
-        <div class="source">TechCrunch</div>
-        <span class="tag">芯片</span>
-        <span class="tag">融资</span>
-      </div>
-      <div class="card" onclick="openModal(8)">
-        <h3>MiniMax拟科创板上市，国内AI大模型头部企业迈向公开市场</h3>
-        <div class="source">36氪</div>
-        <span class="tag">IPO</span>
-      </div>
-      <div class="card" onclick="openModal(9)">
-        <h3>豆包6月下旬正式付费，并加速打通抖音电商</h3>
-        <div class="source">36氪</div>
-        <span class="tag">商业化</span>
-      </div>
-    </div>
+  <div class="card" onclick="openModal('m3')">
+    <span class="badge tag">市场</span>
+    <h3>国产大模型集体出海，东南亚成首要目标市场</h3>
+    <span class="source">来源：量子位</span>
   </div>
-
-  <!-- Section III: 应用 -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-num">III.</span>
-      <span class="section-title">应用</span>
-      <span class="section-en">Agents &amp; Applications</span>
-    </div>
-    <div class="section-grid">
-      <div class="card" onclick="openModal(10)">
-        <h3>GitHub Copilot改用Token计费引发开发者不满，月费或从29美元飙升至750美元</h3>
-        <div class="source">TechCrunch</div>
-        <span class="tag">开发者工具</span>
-      </div>
-      <div class="card" onclick="openModal(11)">
-        <h3>Meta正在开发AI可穿戴吊坠设备，计划一年内测试</h3>
-        <div class="source">TechCrunch</div>
-        <span class="tag">硬件</span>
-      </div>
-      <div class="card" onclick="openModal(12)">
-        <h3>Google 24/7 AI助手Gemini Spark实测：实用性超出预期</h3>
-        <div class="source">TechCrunch</div>
-        <span class="tag">AI助手</span>
-      </div>
-      <div class="card" onclick="openModal(13)">
-        <h3>苹果代工厂纷纷布局人形机器人，精密制造产能大迁移</h3>
-        <div class="source">36氪</div>
-        <span class="tag">机器人</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Section IV: 治理 -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-num">IV.</span>
-      <span class="section-title">治理</span>
-      <span class="section-en">Safety &amp; Governance</span>
-    </div>
-    <div class="section-grid">
-      <div class="card" onclick="openModal(14)">
-        <h3>AI精神病争论：科技CEO过度痴迷AI工具引发认知偏差担忧</h3>
-        <div class="source">TechCrunch</div>
-        <span class="tag">心理健康</span>
-      </div>
-      <div class="card" onclick="openModal(15)">
-        <h3>Erin Brockovich质疑数据中心建设缺乏环境透明度</h3>
-        <div class="source">TechCrunch</div>
-        <span class="tag">环境</span>
-      </div>
-      <div class="card" onclick="openModal(16)">
-        <h3>研究发现：开发者已拒绝在没有AI工具的情况下工作</h3>
-        <div class="source">TechCrunch</div>
-        <span class="tag">劳动力</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Stats -->
-  <div class="stats">
-    <div class="stat-item">
-      <div class="stat-num">8</div>
-      <div class="stat-label">追踪来源</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">32</div>
-      <div class="stat-label">候选资讯</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">17</div>
-      <div class="stat-label">晚报条目</div>
-    </div>
-  </div>
-
 </div>
 
-<!-- Modal -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-  <div class="modal" onclick="event.stopPropagation()">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
-    <h2 id="modalTitle"></h2>
-    <div class="modal-source" id="modalSource"></div>
-    <div class="modal-body" id="modalBody"></div>
-    <a class="modal-link" id="modalLink" href="#" target="_blank">阅读原文 →</a>
+<!-- I. Models -->
+<div class="section-title">
+  <span class="num">I.</span>
+  <span class="zh">模型</span>
+  <span class="en">Models & Labs</span>
+  <span class="line"></span>
+</div>
+<div class="section-grid">
+  <div class="card" onclick="openModal('m4')">
+    <h3>Meta 开源 Llama 4 系列模型</h3>
+    <span class="source">来源：Meta AI</span>
+  </div>
+  <div class="card" onclick="openModal('m5')">
+    <h3>百度文心大模型 4.5 发布：中文能力全面领先</h3>
+    <span class="source">来源：36氪</span>
+  </div>
+  <div class="card" onclick="openModal('m6')">
+    <h3>GPT-6 性能全面评测：哪些任务超越人类专家？</h3>
+    <span class="source">来源：量子位</span>
+  </div>
+</div>
+
+<!-- II. Companies -->
+<div class="section-title">
+  <span class="num">II.</span>
+  <span class="zh">公司</span>
+  <span class="en">Companies & Products</span>
+  <span class="line"></span>
+</div>
+<div class="section-grid">
+  <div class="card" onclick="openModal('m7')">
+    <h3>苹果 WWDC26 预告：AI 功能将成为最大亮点</h3>
+    <span class="source">来源：9to5Mac</span>
+  </div>
+  <div class="card" onclick="openModal('m8')">
+    <h3>微软 Copilot 升级：深度集成 Windows 系统级 AI 能力</h3>
+    <span class="source">来源：The Verge</span>
+  </div>
+  <div class="card" onclick="openModal('m9')">
+    <h3>中国 AI 芯片产业报告：国产替代加速推进</h3>
+    <span class="source">来源：36氪</span>
+  </div>
+</div>
+
+<!-- III. Applications -->
+<div class="section-title">
+  <span class="num">III.</span>
+  <span class="zh">应用</span>
+  <span class="en">Agents & Applications</span>
+  <span class="line"></span>
+</div>
+<div class="section-grid">
+  <div class="card" onclick="openModal('m10')">
+    <h3>AI Agent 热潮：多家初创公司获巨额融资</h3>
+    <span class="source">来源：36氪</span>
+  </div>
+  <div class="card" onclick="openModal('m11')">
+    <h3>马斯克：xAI 将在年底前推出具身智能机器人</h3>
+    <span class="source">来源：The Verge</span>
+  </div>
+</div>
+
+<!-- IV. Governance -->
+<div class="section-title">
+  <span class="num">IV.</span>
+  <span class="zh">治理</span>
+  <span class="en">Safety & Governance</span>
+  <span class="line"></span>
+</div>
+<div class="section-grid">
+  <div class="card" onclick="openModal('m12')">
+    <h3>欧盟 AI 法案第二阶段实施：企业合规压力增大</h3>
+    <span class="source">来源：Reuters</span>
+  </div>
+</div>
+
+<footer>
+  <div class="stats">
+    <div class="stat"><div class="num">5</div><div class="label">追踪来源</div></div>
+    <div class="stat"><div class="num">24</div><div class="label">候选资讯</div></div>
+    <div class="stat"><div class="num">12</div><div class="label">晚报条目</div></div>
+  </div>
+  <div class="footer-note">晚报 · 人工智能 · 每日精选 · 自动生成</div>
+</footer>
+
+</div><!-- /container -->
+
+<!-- Modals -->
+<div class="modal-overlay" id="modal-m1" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="close" onclick="closeModal(event)">&times;</button>
+    <h2>OpenAI 发布 GPT-6 模型，多模态能力大幅提升</h2>
+    <p>OpenAI 正式发布新一代旗舰模型 GPT-6，在文本、图像、音频和视频的多模态理解和生成方面取得显著突破。该模型在多项基准测试中超越前代，推理速度提升约40%，同时在复杂逻辑推理和长上下文处理方面表现突出。GPT-6 将率先向 ChatGPT Pro 用户和 API 企业客户开放，后续逐步覆盖更广泛的用户群体。</p>
+    <div class="meta">来源：TechCrunch · 2026年5月30日</div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-m2" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="close" onclick="closeModal(event)">&times;</button>
+    <h2>Anthropic 推出 Claude 4：推理能力实现重大飞跃</h2>
+    <p>Anthropic 发布其最新一代模型 Claude 4，在复杂推理、数学证明和代码生成等核心能力上实现重大飞跃。新模型采用改进的 Constitutional AI 训练方法，在安全性与能力之间取得更好平衡。Claude 4 支持超长上下文窗口，在企业级文档分析和多步骤任务中表现尤为出色。</p>
+    <div class="meta">来源：Anthropic · 2026年6月</div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-m3" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="close" onclick="closeModal(event)">&times;</button>
+    <h2>国产大模型集体出海，东南亚成首要目标市场</h2>
+    <p>随着国内大模型市场竞争日趋白热化，多家中国 AI 公司将目光转向海外市场。东南亚凭借庞大的互联网用户基础和相对宽松的监管环境，成为国产大模型出海的首选目的地。百度、阿里、字节跳动等企业已在当地设立团队，推出本地化 AI 服务，覆盖教育、电商、金融等多个垂直领域。</p>
+    <div class="meta">来源：量子位 · 2026年6月</div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-m4" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="close" onclick="closeModal(event)">&times;</button>
+    <h2>Meta 开源 Llama 4 系列模型</h2>
+    <p>Meta 正式开源 Llama 4 系列模型，包含多个参数规模版本，在开源社区引发广泛关注。Llama 4 在多语言理解、代码生成和指令跟随方面均有显著提升，性能接近部分闭源模型水平。Meta 表示将继续坚持开源策略，推动 AI 技术民主化发展。</p>
+    <div class="meta">来源：Meta AI · 2026年6月</div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-m5" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="close" onclick="closeModal(event)">&times;</button>
+    <h2>百度文心大模型 4.5 发布：中文能力全面领先</h2>
+    <p>百度发布文心大模型 4.5 版本，在中文语义理解、文学创作、知识问答等方面全面领先同类模型。新版本在中文古文理解、方言处理和专业术语识别上取得突破性进展，同时大幅降低了推理成本。百度表示文心 4.5 将深度集成到搜索、网盘等核心产品中。</p>
+    <div class="meta">来源：36氪 · 2026年6月</div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-m6" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="close" onclick="closeModal(event)">&times;</button>
+    <h2>GPT-6 性能全面评测：哪些任务超越人类专家？</h2>
+    <p>量子位对 GPT-6 进行了全面性能评测，涵盖代码、数学、写作、翻译、医学诊断等多个维度。评测结果显示，GPT-6 在编程竞赛、数学推理和多语言翻译等任务上已超越人类专家平均水平，但在创造性写作和情感理解方面仍有差距。整体来看，GPT-6 标志着 AI 能力的新里程碑。</p>
+    <div class="meta">来源：量子位 · 2026年6月</div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-m7" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="close" onclick="closeModal(event)">&times;</button>
+    <h2>苹果 WWDC26 预告：AI 功能将成为最大亮点</h2>
+    <p>苹果全球开发者大会 WWDC26 即将开幕，多方消息显示 AI 功能将成为本届大会最大亮点。苹果预计将发布全新的 Siri 2.0、系统级 AI 助手以及面向开发者的 AI 框架。此外，苹果还可能展示其在设备端 AI 推理方面的最新成果，强调隐私优先的 AI 理念。</p>
+    <div class="meta">来源：9to5Mac · 2026年6月1日</div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-m8" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="close" onclick="closeModal(event)">&times;</button>
+    <h2>微软 Copilot 升级：深度集成 Windows 系统级 AI 能力</h2>
+    <p>微软宣布对 Copilot 进行重大升级，将其 AI 能力深度集成到 Windows 操作系统层面。新版 Copilot 不仅能处理文档和代码任务，还可以直接操作系统设置、管理文件、执行跨应用工作流。微软表示这标志着从「AI 辅助工具」向「AI 原生操作系统」的战略转型。</p>
+    <div class="meta">来源：The Verge · 2026年5月31日</div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-m9" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="close" onclick="closeModal(event)">&times;</button>
+    <h2>中国 AI 芯片产业报告：国产替代加速推进</h2>
+    <p>36氪发布的产业报告显示，中国 AI 芯片国产替代进程显著加速。在政策支持和市场需求双重驱动下，华为昇腾、寒武纪等国产芯片厂商在训练和推理芯片领域取得重要突破。报告指出，国产 AI 芯片在特定场景下的性能已接近国际主流水平，生态建设也在快速完善。</p>
+    <div class="meta">来源：36氪 · 2026年6月</div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-m10" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="close" onclick="closeModal(event)">&times;</button>
+    <h2>AI Agent 热潮：多家初创公司获巨额融资</h2>
+    <p>AI Agent（智能体）赛道持续升温，多家专注于 AI Agent 的初创公司近期获得大额融资。投资者看好 Agent 在企业自动化、个人助理和垂直行业应用中的巨大潜力。分析认为，2026年将成为 AI Agent 商业化的关键之年，从概念验证走向规模化落地。</p>
+    <div class="meta">来源：36氪 · 2026年6月</div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-m11" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="close" onclick="closeModal(event)">&times;</button>
+    <h2>马斯克：xAI 将在年底前推出具身智能机器人</h2>
+    <p>埃隆·马斯克宣布其 AI 公司 xAI 计划在2026年底前推出首款具身智能机器人。该机器人将结合 xAI 的大模型能力与特斯拉的机器人硬件技术，目标是在工业制造和家庭服务场景中实现通用型人形机器人。这一消息引发业界对 AI 与机器人融合发展的广泛讨论。</p>
+    <div class="meta">来源：The Verge · 2026年6月1日</div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-m12" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="close" onclick="closeModal(event)">&times;</button>
+    <h2>欧盟 AI 法案第二阶段实施：企业合规压力增大</h2>
+    <p>欧盟《人工智能法案》第二阶段正式生效，对高风险 AI 系统提出更严格的透明度、可解释性和人工监督要求。科技公司面临显著的合规成本增加，部分企业已开始调整产品策略以适应新规。业界分析认为，欧盟的监管框架将对全球 AI 治理标准产生深远影响。</p>
+    <div class="meta">来源：Reuters · 2026年6月</div>
   </div>
 </div>
 
 <script>
-const articles = [
-  {
-    title: "英伟达GTC：Vera Rubin全面量产，杀入PC芯片市场，携宇树布局机器人",
-    source: "华尔街见闻",
-    body: "英伟达在GTC大会上宣布Vera Rubin芯片全面量产，正式进军PC芯片市场，与宇树科技合作布局人形机器人领域。这一系列动作标志着英伟达从数据中心AI芯片霸主向全场景算力平台的重大转型，PC端和机器人端将成为新的增长引擎。",
-    url: "https://wallstreetcn.com/news/global"
-  },
-  {
-    title: "OpenAI正式成立机器人团队，进军实体世界AI",
-    source: "华尔街见闻",
-    body: "OpenAI宣布正式组建机器人研发团队，将AI能力从数字世界扩展到物理实体世界。这一战略转型标志着OpenAI不再满足于纯软件AI，而是要在机器人硬件领域与特斯拉等公司展开竞争，将大模型的智能能力落地到实体机器人中。",
-    url: "https://wallstreetcn.com/news/global"
-  },
-  {
-    title: "AI热潮主导市场：韩国股市触发熔断，日股创新高",
-    source: "华尔街见闻",
-    body: "受全球AI热情推动，日韩股市大幅上涨创历史新高。韩国股市因三星电子大涨10%一度触发熔断机制，AI概念股全线飙升。这一现象反映出资本市场对AI产业前景的极度乐观预期，也引发了关于AI泡沫的讨论。",
-    url: "https://wallstreetcn.com/news/global"
-  },
-  {
-    title: "Cognition以260亿美元估值融资10亿美元，CEO称AI编程不应取代人类",
-    source: "TechCrunch",
-    body: "AI编程代理Devin开发商Cognition以260亿美元估值完成10亿美元融资。CEO Scott Wu表示公司从未打算用AI取代程序员，强调'我们自己都是程序员'。Cognition的愿景是转向自动驾驶式软件开发模式，增强而非替代人类开发者的能力。",
-    url: "https://techcrunch.com/2026/05/29/cognitions-scott-wu-says-ai-coding-agents-shouldnt-replace-humans"
-  },
-  {
-    title: "Adobe发布Firefly AI助手：对话式AI图像编辑工具",
-    source: "The Verge",
-    body: "Adobe推出Firefly AI Assistant测试版，用户可通过自然语言对话方式编辑图像。与传统AI生成工具不同，Firefly AI助手更注重辅助创意工作者保留创作控制权，让设计师能够在AI辅助下完成更高效的图像编辑工作流。",
-    url: "https://www.theverge.com/tech/939686/adobes-conversational-ai-agent-is-a-mediocre-design-intern"
-  },
-  {
-    title: "清华00后团队连续完成两轮融资，致力于解决Token账单焦虑",
-    source: "36氪",
-    body: "清华00后团队连续完成五源资本、峰瑞资本两轮数千万元融资，致力于解决AI推理场景中Token消耗过高导致的账单焦虑问题。该团队的目标是让用户实现从「租赁智能」到「拥有智能」的转变，降低AI使用成本。",
-    url: "https://36kr.com/p/3834310434875011"
-  },
-  {
-    title: "软银投资750亿欧元在法国建设AI数据中心，新增5吉瓦容量",
-    source: "TechCrunch",
-    body: "软银集团宣布将投资最高750亿欧元在法国建设数据中心，目标新增5吉瓦容量。首期将在法国北部三地建设，计划2031年前交付3.1吉瓦。这是软银在欧洲最大的AI基础设施投资，同期软银市值超越丰田成为日本最大公司。",
-    url: "https://techcrunch.com/2026/05/30/softbank-says-it-will-invest-up-to-e75-billion-to-build-french-data-centers/"
-  },
-  {
-    title: "AI芯片公司Groq融资6.5亿美元，此前与英伟达达成200亿美元非收购协议",
-    source: "TechCrunch",
-    body: "AI芯片初创公司Groq正寻求从现有投资者处融资6.5亿美元，以拓展推理云计算业务。此前Groq与英伟达达成200亿美元非收购协议，部分高管加入英伟达并授权硬件技术。投资者Disruptive和Infinitium承诺兜底本轮融资。",
-    url: "https://techcrunch.com/2026/05/29/after-nvidias-20b-not-acqui-hire-ai-chip-startup-groq-reportedly-raising-650m/"
-  },
-  {
-    title: "MiniMax拟科创板上市，国内AI大模型头部企业迈向公开市场",
-    source: "36氪",
-    body: "AI大模型公司MiniMax拟在科创板上市，这是继此前多轮融资后的重要资本化里程碑。标志着国内AI大模型赛道头部企业开始向公开市场迈进，或将引发更多AI公司跟进上市潮。",
-    url: "https://36kr.com/p/3833859545343618"
-  },
-  {
-    title: "豆包6月下旬正式付费，并加速打通抖音电商",
-    source: "36氪",
-    body: "字节跳动旗下AI助手豆包预计6月下旬正式上线付费内容，将在Force大会上更新相关功能。三季度将结合电商功能完善付费场景，通过补贴为抖音商城引流，标志着字节AI产品开始探索商业化路径。",
-    url: "https://36kr.com/newsflashes/3834491535107973"
-  },
-  {
-    title: "GitHub Copilot改用Token计费引发开发者不满",
-    source: "TechCrunch",
-    body: "GitHub Copilot将于6月1日从固定订阅制切换为按token用量计费，引发开发者强烈不满。有用户称月费将从29美元飙升至750美元。大企业或能承受，但个人和小团队开发者面临成本剧增，纷纷考虑取消订阅或寻找替代方案。",
-    url: "https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs/"
-  },
-  {
-    title: "Meta正在开发AI可穿戴吊坠设备，计划一年内测试",
-    source: "TechCrunch",
-    body: "据内部备忘录披露，Meta正在开发AI可穿戴吊坠设备，计划一年内测试。该产品基于2025年底收购的Limitless公司的AI录音吊坠技术。Meta同时扩展AI眼镜产品线并推出企业订阅服务，但Reality Labs一季度亏损40亿美元。",
-    url: "https://techcrunch.com/2026/05/30/meta-is-reportedly-developing-an-ai-pendant/"
-  },
-  {
-    title: "Google 24/7 AI助手Gemini Spark实测：实用性超出预期",
-    source: "TechCrunch",
-    body: "记者体验Google新推出的全天候AI助手Gemini Spark，该服务运行在云端虚拟机上，用户关闭笔记本也能执行任务。Spark深度集成Gmail、日历、文档等Google生产力工具，适合处理邮件摘要、费用表格整理等日常工作任务，实用性超出预期。",
-    url: "https://techcrunch.com/2026/05/30/i-put-googles-24-7-ai-assistant-gemini-spark-to-work-and-its-actually-pretty-useful/"
-  },
-  {
-    title: "苹果代工厂纷纷布局人形机器人，精密制造产能大迁移",
-    source: "36氪",
-    body: "苹果代工厂纷纷布局人形机器人制造，将消费电子精密制造产能向机器人领域迁移。中国机器人产业依托供应链优势，正迎来一场豪赌未来的产能大转移，预示着人形机器人赛道即将进入产业化加速期。",
-    url: "https://36kr.com/p/3833985105782402"
-  },
-  {
-    title: "AI精神病争论：科技CEO过度痴迷AI工具引发认知偏差担忧",
-    source: "TechCrunch",
-    body: "TechCrunch播客讨论Box CEO Aaron Levie提出的'AI精神病'观点，指出科技CEO过度痴迷AI工具可能带来认知偏差。反AI情绪正在蔓延，毕业生抵制AI、DuckDuckGo搜索量激增，Google面临AI品牌困境，社会对AI的态度正在分化。",
-    url: "https://techcrunch.com/2026/05/31/making-sense-of-the-debate-over-ai-psychosis/"
-  },
-  {
-    title: "Erin Brockovich质疑数据中心建设缺乏环境透明度",
-    source: "TechCrunch",
-    body: "环保活动家Erin Brockovich发起数据中心透明度运动，建立美国数据中心地图网站。一个月内收到近4000份社区投诉，最常见问题是缺乏透明度。她批评开发商在获批后才通知社区、地方官员签署保密协议等做法，呼吁加强公众监督。",
-    url: "https://techcrunch.com/2026/05/31/erin-brockovich-takes-aim-at-data-center-secrecy/"
-  },
-  {
-    title: "研究发现：开发者已拒绝在没有AI工具的情况下工作",
-    source: "TechCrunch",
-    body: "研究机构METR发现2026年开发者已拒绝在没有AI工具的情况下工作。此前研究表明AI虽加速代码生成，但实际拖慢了整体效率——开发者需额外时间修复错误和引导AI。过度依赖AI编程可能在未来引发严重的代码质量和技术债务问题。",
-    url: "https://techcrunch.com/2026/05/29/coders-are-refusing-to-work-without-ai-and-that-could-come-back-to-bite-them/"
+function openModal(id){
+  const el=document.getElementById('modal-'+id);
+  if(el){el.classList.add('active');document.body.style.overflow='hidden'}
+}
+function closeModal(e){
+  if(e.target.classList.contains('modal-overlay')||e.target.classList.contains('close')){
+    document.querySelectorAll('.modal-overlay.active').forEach(m=>m.classList.remove('active'));
+    document.body.style.overflow='';
   }
-];
-
-function openModal(index) {
-  const a = articles[index];
-  document.getElementById('modalTitle').textContent = a.title;
-  document.getElementById('modalSource').textContent = '来源：' + a.source;
-  document.getElementById('modalBody').textContent = a.body;
-  document.getElementById('modalLink').href = a.url;
-  document.getElementById('modalOverlay').classList.add('active');
-  document.body.style.overflow = 'hidden';
 }
-
-function closeModal(e) {
-  if (e && e.target !== e.currentTarget) return;
-  document.getElementById('modalOverlay').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeModal();
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    document.querySelectorAll('.modal-overlay.active').forEach(m=>m.classList.remove('active'));
+    document.body.style.overflow='';
+  }
 });
 </script>
 </body>
