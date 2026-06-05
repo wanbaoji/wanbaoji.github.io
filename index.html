@@ -1,815 +1,369 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>晚報 · 人工智能 · 每日精选</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 25%, #0d1b2a 50%, #1a0a2e 75%, #0a0a1a 100%);
-            min-height: 100vh;
-            color: #e0e0e0;
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(ellipse at 20% 50%, rgba(120, 60, 200, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(60, 120, 200, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 80%, rgba(200, 60, 120, 0.08) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Header */
-        .header {
-            text-align: center;
-            padding: 40px 20px 30px;
-            margin-bottom: 30px;
-        }
-
-        .header-top {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-
-        .header-dot {
-            width: 8px;
-            height: 8px;
-            background: #ff6b9d;
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-
-        .header h1 {
-            font-size: 2.2rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #fff 0%, #a78bfa 50%, #60a5fa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: 4px;
-        }
-
-        .header .subtitle {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.5);
-            letter-spacing: 6px;
-            margin-top: 8px;
-        }
-
-        .header .date {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.4);
-            margin-top: 12px;
-            font-weight: 300;
-        }
-
-        /* Glass Card */
-        .glass {
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .glass:hover {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Hero Section */
-        .hero-section {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .hero-card {
-            padding: 30px;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #ff6b9d, #a78bfa, #60a5fa);
-        }
-
-        .hero-tag {
-            display: inline-block;
-            padding: 4px 12px;
-            background: rgba(167, 139, 250, 0.2);
-            border: 1px solid rgba(167, 139, 250, 0.3);
-            border-radius: 20px;
-            font-size: 0.75rem;
-            color: #a78bfa;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-
-        .hero-card h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            line-height: 1.5;
-            margin-bottom: 12px;
-            color: #fff;
-        }
-
-        .hero-card .excerpt {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.7;
-        }
-
-        .hero-card .source {
-            margin-top: 16px;
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.35);
-        }
-
-        .sidebar-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .sidebar-card {
-            padding: 20px;
-            cursor: pointer;
-            flex: 1;
-        }
-
-        .sidebar-card h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            line-height: 1.5;
-            margin-bottom: 8px;
-            color: #fff;
-        }
-
-        .sidebar-card .excerpt {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.5);
-            line-height: 1.6;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .sidebar-card .source {
-            margin-top: 10px;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Category Sections */
-        .category {
-            margin-bottom: 30px;
-        }
-
-        .category-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
-            padding: 0 4px;
-        }
-
-        .category-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-        }
-
-        .category-icon.models { background: linear-gradient(135deg, rgba(167, 139, 250, 0.3), rgba(167, 139, 250, 0.1)); }
-        .category-icon.companies { background: linear-gradient(135deg, rgba(96, 165, 250, 0.3), rgba(96, 165, 250, 0.1)); }
-        .category-icon.apps { background: linear-gradient(135deg, rgba(52, 211, 153, 0.3), rgba(52, 211, 153, 0.1)); }
-        .category-icon.governance { background: linear-gradient(135deg, rgba(251, 146, 60, 0.3), rgba(251, 146, 60, 0.1)); }
-
-        .category-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .category-subtitle {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.35);
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2px 10px;
-            border-radius: 12px;
-        }
-
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 16px;
-        }
-
-        .news-card {
-            padding: 20px;
-            cursor: pointer;
-        }
-
-        .news-card h4 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            line-height: 1.5;
-            margin-bottom: 8px;
-            color: #fff;
-        }
-
-        .news-card .excerpt {
-            font-size: 0.82rem;
-            color: rgba(255, 255, 255, 0.45);
-            line-height: 1.6;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .news-card .meta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 12px;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Modal */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal {
-            background: rgba(20, 20, 40, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            max-width: 640px;
-            width: 100%;
-            max-height: 80vh;
-            overflow-y: auto;
-            padding: 32px;
-            position: relative;
-            animation: modalIn 0.3s ease;
-        }
-
-        @keyframes modalIn {
-            from { opacity: 0; transform: scale(0.95) translateY(10px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            width: 32px;
-            height: 32px;
-            border: none;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: #fff;
-            font-size: 1.2rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-        }
-
-        .modal-close:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .modal-tag {
-            display: inline-block;
-            padding: 4px 12px;
-            background: rgba(167, 139, 250, 0.2);
-            border: 1px solid rgba(167, 139, 250, 0.3);
-            border-radius: 20px;
-            font-size: 0.75rem;
-            color: #a78bfa;
-            margin-bottom: 16px;
-        }
-
-        .modal h2 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #fff;
-            line-height: 1.5;
-            margin-bottom: 16px;
-        }
-
-        .modal .detail {
-            font-size: 0.92rem;
-            color: rgba(255, 255, 255, 0.65);
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .modal .modal-source {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.35);
-            padding-top: 16px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .modal .modal-source a {
-            color: #60a5fa;
-            text-decoration: none;
-        }
-
-        .modal .modal-source a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer Stats */
-        .footer {
-            margin-top: 40px;
-            padding: 30px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 16px;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-value {
-            font-size: 1.8rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #a78bfa, #60a5fa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.35);
-            margin-top: 4px;
-        }
-
-        .footer-text {
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-section {
-                grid-template-columns: 1fr;
-            }
-            .header h1 {
-                font-size: 1.6rem;
-            }
-            .news-grid {
-                grid-template-columns: 1fr;
-            }
-            .stats {
-                gap: 24px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>晚報 · 人工智能 · 每日精选</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Noto Sans SC",-apple-system,"system-ui",sans-serif;
+  background:linear-gradient(135deg,rgb(10,10,26) 0%,rgb(26,10,46) 25%,rgb(13,27,42) 50%,rgb(26,10,46) 75%,rgb(10,10,26) 100%);
+  min-height:100vh;color:rgb(224,224,224);line-height:1.6;
+}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+/* Header */
+.header{text-align:center;padding:40px 0 30px}
+.header h1{
+  font-size:35.2px;font-weight:900;color:rgb(224,224,224);
+  letter-spacing:4px;display:inline-flex;align-items:center;gap:12px
+}
+.header-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:rgb(255,107,157);
+  animation:pulse 2s ease-in-out infinite
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.2)}}
+.header .subtitle{
+  font-size:15.2px;font-weight:400;color:rgba(255,255,255,.5);
+  letter-spacing:6px;margin-top:8px
+}
+.header .date{
+  font-size:13px;color:rgba(255,255,255,.35);margin-top:10px;
+  letter-spacing:2px
+}
+/* Glass card */
+.glass{
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  transition:all .3s;
+  cursor:pointer
+}
+.glass:hover{
+  background:rgba(255,255,255,.07);
+  border-color:rgba(255,255,255,.15);
+  transform:translateY(-2px);
+  box-shadow:0 8px 32px rgba(0,0,0,.3)
+}
+/* Hero section */
+.hero{display:grid;grid-template-columns:1fr 380px;gap:20px;margin-bottom:30px}
+.hero-card{padding:30px;position:relative}
+.hero-card .tag{
+  display:inline-block;background:rgba(167,139,250,.2);
+  border:1px solid rgba(167,139,250,.3);
+  border-radius:20px;padding:4px 12px;
+  font-size:12px;color:rgb(167,139,250);margin-bottom:16px
+}
+.hero-card h2{font-size:24px;font-weight:700;color:#fff;margin-bottom:14px;line-height:1.5}
+.hero-card p{font-size:14.4px;font-weight:400;color:rgba(255,255,255,.6);line-height:1.7}
+.hero-card .meta{font-size:12px;color:rgba(255,255,255,.3);margin-top:16px;display:flex;justify-content:space-between}
+.sidebar-stack{display:flex;flex-direction:column;gap:20px}
+.sidebar-card{padding:24px}
+.sidebar-card .tag{
+  display:inline-block;background:rgba(96,165,250,.2);
+  border:1px solid rgba(96,165,250,.3);
+  border-radius:20px;padding:3px 10px;
+  font-size:11px;color:rgb(96,165,250);margin-bottom:12px
+}
+.sidebar-card h3{font-size:16px;font-weight:600;color:#fff;margin-bottom:10px;line-height:1.5}
+.sidebar-card p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6}
+.sidebar-card .meta{font-size:11px;color:rgba(255,255,255,.3);margin-top:12px}
+/* Category sections */
+.category{margin-bottom:30px}
+.category-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.category-icon{
+  width:36px;height:36px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px
+}
+.category-icon.models{background:linear-gradient(135deg,rgba(167,139,250,.3),rgba(167,139,250,.1))}
+.category-icon.companies{background:linear-gradient(135deg,rgba(96,165,250,.3),rgba(96,165,250,.1))}
+.category-icon.apps{background:linear-gradient(135deg,rgba(52,211,153,.3),rgba(52,211,153,.1))}
+.category-icon.governance{background:linear-gradient(135deg,rgba(251,146,60,.3),rgba(251,146,60,.1))}
+.category-title{font-size:17.6px;font-weight:700;color:#fff}
+.category-subtitle{font-size:12px;color:rgba(255,255,255,.5);font-weight:400}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.news-card{padding:20px}
+.news-card h4{font-size:15.2px;font-weight:600;color:#fff;margin-bottom:10px;line-height:1.5}
+.news-card p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6}
+.news-card .meta{font-size:11px;color:rgba(255,255,255,.3);margin-top:12px;display:flex;justify-content:space-between}
+/* Stats */
+.stats{
+  display:flex;justify-content:center;gap:60px;
+  padding:30px 0 20px;margin-top:10px
+}
+.stat{text-align:center}
+.stat-value{
+  font-size:28.8px;font-weight:900;
+  background:linear-gradient(135deg,rgb(167,139,250),rgb(96,165,250));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text
+}
+.stat-label{font-size:12.8px;font-weight:400;color:rgba(255,255,255,.35);margin-top:4px}
+/* Modal */
+.modal-overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.7);backdrop-filter:blur(8px);
+  z-index:1000;align-items:center;justify-content:center
+}
+.modal-overlay.active{display:flex}
+.modal{
+  background:linear-gradient(135deg,rgb(18,18,38),rgb(28,14,48));
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:20px;padding:36px;max-width:640px;width:90%;
+  animation:modalIn .3s ease;position:relative;max-height:80vh;overflow-y:auto
+}
+@keyframes modalIn{from{opacity:0;transform:scale(.95) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-close{
+  position:absolute;top:16px;right:20px;
+  background:none;border:none;color:rgba(255,255,255,.5);
+  font-size:24px;cursor:pointer
+}
+.modal-close:hover{color:#fff}
+.modal .tag{
+  display:inline-block;background:rgba(167,139,250,.2);
+  border:1px solid rgba(167,139,250,.3);
+  border-radius:20px;padding:4px 12px;
+  font-size:12px;color:rgb(167,139,250);margin-bottom:16px
+}
+.modal h2{font-size:22px;font-weight:700;color:#fff;margin-bottom:16px;line-height:1.5}
+.modal .summary{font-size:15px;color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:20px}
+.modal .source{font-size:12px;color:rgba(255,255,255,.3)}
+.modal .source a{color:rgb(96,165,250);text-decoration:none}
+.modal .source a:hover{text-decoration:underline}
+/* Footer */
+.footer{text-align:center;padding:30px 0;color:rgba(255,255,255,.25);font-size:12px}
+/* Responsive */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .news-grid{grid-template-columns:1fr 1fr}
+  .stats{gap:30px}
+}
+@media(max-width:600px){
+  .news-grid{grid-template-columns:1fr}
+  .stats{flex-direction:column;gap:16px}
+  .header h1{font-size:24px;letter-spacing:2px}
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-top">
-                <span class="header-dot"></span>
-                <h1>晚報 · 人工智能 · 每日精选</h1>
-                <span class="header-dot"></span>
-            </div>
-            <div class="subtitle">AI DAILY DIGEST</div>
-            <div class="date">二〇二六年六月四日 · 星期四</div>
-        </header>
+<div class="container">
+  <!-- Header -->
+  <header class="header">
+    <h1><span class="header-dot"></span>晚報 · 人工智能 · 每日精选</h1>
+    <div class="subtitle">AI DAILY DIGEST</div>
+    <div class="date">2026年6月5日 · 星期四</div>
+  </header>
 
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-card glass" onclick="openModal('modal1')">
-                <span class="hero-tag">🛡️ 治理</span>
-                <h2>特朗普政府拟对 OpenAI、谷歌、Anthropic 的 AI 模型实施预审查</h2>
-                <p class="excerpt">美国特朗普政府正在推进一项行政命令，要求 OpenAI、Google 和 Anthropic 等主要 AI 公司的前沿模型在发布前接受政府安全审查。这是美国首次对 AI 模型实施强制性预发布审查机制，标志着 AI 监管进入新阶段。</p>
-                <div class="source">来源：Cybernews · 2026年6月3日</div>
-            </div>
-            <div class="sidebar-cards">
-                <div class="sidebar-card glass" onclick="openModal('modal2')">
-                    <span class="hero-tag">🧠 模型</span>
-                    <h3>微软发布新 AI 模型减少对 OpenAI 依赖，降低开发者成本</h3>
-                    <p class="excerpt">微软推出全新自研 AI 模型系列，旨在减少对 OpenAI 技术的依赖，同时为开发者提供更低成本的 AI 服务。此举标志着微软在 AI 领域的自主化战略加速。</p>
-                    <div class="source">CNBC · 6月3日</div>
-                </div>
-                <div class="sidebar-card glass" onclick="openModal('modal3')">
-                    <span class="hero-tag">🏗️ 公司</span>
-                    <h3>36氪独家揭秘：2026年字节AI的四大关键命题</h3>
-                    <p class="excerpt">36氪深度报道揭示字节跳动在 2026 年 AI 战略的四大核心方向，涵盖大模型、应用生态、商业化和全球化布局。</p>
-                    <div class="source">36氪 · 6月3日</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- I. 模型 (Models & Labs) -->
-        <section class="category">
-            <div class="category-header">
-                <div class="category-icon models">🧠</div>
-                <span class="category-title">I. 模型</span>
-                <span class="category-subtitle">Models &amp; Labs</span>
-            </div>
-            <div class="news-grid">
-                <div class="news-card glass" onclick="openModal('modal4')">
-                    <h4>科大讯飞发布 AI 眼镜新品，腾讯 AI 产业应用大会即将召开</h4>
-                    <p class="excerpt">科大讯飞推出全新 AI 眼镜产品，集成语音助手和实时翻译功能。腾讯 AI 产业应用大会在即，将发布系列智能体应用新品。</p>
-                    <div class="meta">
-                        <span>千家网</span>
-                        <span>6月4日</span>
-                    </div>
-                </div>
-                <div class="news-card glass" onclick="openModal('modal5')">
-                    <h4>香港发布最新本地 AI 大模型，冀实现"Token 出海"</h4>
-                    <p class="excerpt">香港发布最新自主研发的本地 AI 大模型，希望以此推动 AI 技术走向国际市场，实现"Token 出海"的战略目标，提升香港在全球 AI 版图中的地位。</p>
-                    <div class="meta">
-                        <span>海峡飞虹中文网</span>
-                        <span>6月4日</span>
-                    </div>
-                </div>
-                <div class="news-card glass" onclick="openModal('modal6')">
-                    <h4>CVPR 2026：英伟达特斯拉 Waymo 一块听中国公司讲物理 AI</h4>
-                    <p class="excerpt">在 CVPR 2026 大会上，中国公司在物理 AI 领域的研究成果引发关注，英伟达、特斯拉和 Waymo 等国际巨头共同参与讨论，展现中国 AI 研究的国际影响力。</p>
-                    <div class="meta">
-                        <span>搜狐网</span>
-                        <span>6月4日</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- II. 公司 (Companies & Products) -->
-        <section class="category">
-            <div class="category-header">
-                <div class="category-icon companies">🏗️</div>
-                <span class="category-title">II. 公司</span>
-                <span class="category-subtitle">Companies &amp; Products</span>
-            </div>
-            <div class="news-grid">
-                <div class="news-card glass" onclick="openModal('modal7')">
-                    <h4>蓝信发布 2026 全栈 AI 新品，打造 100% 国产化政企智能办公</h4>
-                    <p class="excerpt">蓝信推出 2026 年全栈 AI 新品，涵盖三大产品线，全面落地政企办公场景，实现 100% 国产化智能办公新范式，推动信创产业发展。</p>
-                    <div class="meta">
-                        <span>雷峰网</span>
-                        <span>6月4日</span>
-                    </div>
-                </div>
-                <div class="news-card glass" onclick="openModal('modal8')">
-                    <h4>英伟达全栈 AI 路线图落地，科创人工智能 ETF 盘中涨超 4.5%</h4>
-                    <p class="excerpt">英伟达全栈 AI 路线图正式落地实施，重点布局国产 AI 产业链，受此利好消息影响，科创人工智能 ETF 华宝盘中涨幅超过 4.5%。</p>
-                    <div class="meta">
-                        <span>新浪财经</span>
-                        <span>6月4日</span>
-                    </div>
-                </div>
-                <div class="news-card glass" onclick="openModal('modal9')">
-                    <h4>微信将推出 AI 智能体，腾讯人士回应</h4>
-                    <p class="excerpt">有消息称微信正在开发一款 AI 智能体应用，腾讯方面对此作出回应。此举被视为腾讯在 AI 应用领域的重大布局，将深度整合社交与 AI 能力。</p>
-                    <div class="meta">
-                        <span>东方财富</span>
-                        <span>6月2日</span>
-                    </div>
-                </div>
-                <div class="news-card glass" onclick="openModal('modal10')">
-                    <h4>Anthropic 超越 OpenAI 成为全球最具价值 AI 初创公司</h4>
-                    <p class="excerpt">据纽约时报报道，Anthropic 在最新一轮融资后估值超越 OpenAI，成为全球最具价值的 AI 初创企业。这标志着 AI 行业竞争格局的重大变化。</p>
-                    <div class="meta">
-                        <span>纽约时报</span>
-                        <span>5月29日</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- III. 应用 (Agents & Applications) -->
-        <section class="category">
-            <div class="category-header">
-                <div class="category-icon apps">⚡</div>
-                <span class="category-title">III. 应用</span>
-                <span class="category-subtitle">Agents &amp; Applications</span>
-            </div>
-            <div class="news-grid">
-                <div class="news-card glass" onclick="openModal('modal11')">
-                    <h4>微软推出 Project Solara：运行 AI Agent 而非应用的新平台</h4>
-                    <p class="excerpt">微软发布 Project Solara 平台，这是一个全新的操作系统级平台，专门用于运行 AI Agent 而非传统应用。该平台代表了人机交互范式的根本性转变。</p>
-                    <div class="meta">
-                        <span>GeekWire</span>
-                        <span>6月3日</span>
-                    </div>
-                </div>
-                <div class="news-card glass" onclick="openModal('modal12')">
-                    <h4>Hermes 发布官方桌面 AI Agent 应用，终结终端时代</h4>
-                    <p class="excerpt">Nous Research 的 Hermes Agent 正式发布桌面应用版本，支持 Windows、macOS 和 Linux，集成 Telegram、Discord 等多平台，标志着 AI Agent 从命令行走向图形化。</p>
-                    <div class="meta">
-                        <span>Decrypt</span>
-                        <span>6月3日</span>
-                    </div>
-                </div>
-                <div class="news-card glass" onclick="openModal('modal13')">
-                    <h4>上海"人工智能+"服务新标杆，AI 触角伸向房地产</h4>
-                    <p class="excerpt">上海在"人工智能+"领域树立新标杆，AI 技术应用场景从传统行业延伸至房地产领域，推动智慧城市建设和产业数字化转型。</p>
-                    <div class="meta">
-                        <span>21财经</span>
-                        <span>6月4日</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- IV. 治理 (Safety & Governance) -->
-        <section class="category">
-            <div class="category-header">
-                <div class="category-icon governance">🛡️</div>
-                <span class="category-title">IV. 治理</span>
-                <span class="category-subtitle">Safety &amp; Governance</span>
-            </div>
-            <div class="news-grid">
-                <div class="news-card glass" onclick="openModal('modal14')">
-                    <h4>罗马教皇发布首部 AI 通谕：全球人工智能治理的文明叙事</h4>
-                    <p class="excerpt">罗马教皇发布历史上首部关于人工智能的通谕文件，从文明叙事和伦理向度探讨全球 AI 治理问题，呼吁国际社会共同关注 AI 发展中的伦理挑战。</p>
-                    <div class="meta">
-                        <span>复旦发展研究院</span>
-                        <span>6月4日</span>
-                    </div>
-                </div>
-                <div class="news-card glass" onclick="openModal('modal15')">
-                    <h4>《人工智能应用伦理安全指引 1.0》深度解读</h4>
-                    <p class="excerpt">《山海夜话》第 4 期节目深度解读《人工智能应用伦理安全指引 1.0》，探讨如何确保 AI 应用向善发展，为行业提供伦理安全实践指南。</p>
-                    <div class="meta">
-                        <span>智源社区</span>
-                        <span>6月4日</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-value">6</div>
-                    <div class="stat-label">追踪来源</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">28</div>
-                    <div class="stat-label">候选资讯</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">12</div>
-                    <div class="stat-label">晚报条目</div>
-                </div>
-            </div>
-            <div class="footer-text">晚報 · 人工智能 · 每日精选 · 自动采集与筛选</div>
-        </footer>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="glass hero-card" onclick="openModal(0)">
+      <span class="tag">🔥 头条</span>
+      <h2>Google I/O 2026：Gemini 进入代理时代，多模态能力全面升级</h2>
+      <p>Google 在 I/O 2026 大会上宣布 Gemini 正式进入"代理时代"（Agentic Era），推出 Gemini Omni 和 Gemini 3.5 模型，支持主动式、全天候 AI 助手服务。新版 Gemini 应用可自动完成复杂任务链，并引入 Managed Agents API，让开发者轻松构建自主代理。</p>
+      <div class="meta"><span>来源：Google AI Blog</span><span>今日</span></div>
     </div>
-
-    <!-- Modal Overlays -->
-    <div class="modal-overlay" id="modal1" onclick="closeModal('modal1')">
-        <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal('modal1')">×</button>
-            <span class="modal-tag">🛡️ 治理</span>
-            <h2>特朗普政府拟对 OpenAI、谷歌、Anthropic 的 AI 模型实施预审查</h2>
-            <p class="detail">美国特朗普政府正在推进一项行政命令，要求 OpenAI、Google 和 Anthropic 等主要 AI 公司的前沿模型在发布前接受政府安全审查。这是美国首次对 AI 模型实施强制性预发布审查机制。该政策旨在应对高级 AI 系统可能带来的安全风险，包括生物武器、网络攻击等潜在威胁。此举标志着美国 AI 监管进入新阶段，可能对全球 AI 产业格局产生深远影响。</p>
-            <div class="modal-source">来源：<a href="https://cybernews.com" target="_blank">Cybernews</a> · 2026年6月3日</div>
-        </div>
+    <div class="sidebar-stack">
+      <div class="glass sidebar-card" onclick="openModal(1)">
+        <span class="tag">模型</span>
+        <h3>Microsoft Build 2026：发布 MAI 模型家族，一口气推出七款新 AI 模型</h3>
+        <p>微软在 Build 2026 大会上发布全新 MAI 模型家族，涵盖语言、视觉、代码等多个领域，对标 OpenAI 和 Google 的最新产品线。</p>
+        <div class="meta"><span>来源：DEV Community</span><span>今日</span></div>
+      </div>
+      <div class="glass sidebar-card" onclick="openModal(2)">
+        <span class="tag">公司</span>
+        <h3>OpenAI 向每家 YC 初创公司赠送 200 万美元 API 额度</h3>
+        <p>OpenAI 宣布与 Y Combinator 达成合作，为每家 YC 初创公司提供价值 200 万美元的 API 使用额度，加速 AI 创业生态发展。</p>
+        <div class="meta"><span>来源：36氪</span><span>今日</span></div>
+      </div>
     </div>
+  </section>
 
-    <div class="modal-overlay" id="modal2" onclick="closeModal('modal2')">
-        <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal('modal2')">×</button>
-            <span class="modal-tag">🧠 模型</span>
-            <h2>微软发布新 AI 模型减少对 OpenAI 依赖，降低开发者成本</h2>
-            <p class="detail">微软推出全新自研 AI 模型系列，旨在减少对 OpenAI 技术的依赖，同时为开发者提供更低成本的 AI 服务。新模型在多项基准测试中表现出色，特别是在代码生成和多语言理解方面。此举标志着微软在 AI 领域的自主化战略加速，也反映了大型科技公司在 AI 供应链多元化方面的普遍趋势。</p>
-            <div class="modal-source">来源：<a href="https://cnbc.com" target="_blank">CNBC</a> · 2026年6月3日</div>
-        </div>
+  <!-- Category I: Models -->
+  <section class="category">
+    <div class="category-header">
+      <div class="category-icon models">🧠</div>
+      <div>
+        <div class="category-title">模型</div>
+        <div class="category-subtitle">Models & Labs</div>
+      </div>
     </div>
-
-    <div class="modal-overlay" id="modal3" onclick="closeModal('modal3')">
-        <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal('modal3')">×</button>
-            <span class="modal-tag">🏗️ 公司</span>
-            <h2>36氪独家揭秘：2026年字节AI的四大关键命题</h2>
-            <p class="detail">36氪深度报道揭示字节跳动在 2026 年 AI 战略的四大核心方向：第一，大模型技术持续迭代，追求性能与效率的平衡；第二，构建 AI 应用生态，赋能旗下产品矩阵；第三，探索 AI 商业化路径，实现技术变现；第四，推进全球化布局，在海外市场建立 AI 竞争力。字节跳动正从短视频巨头向 AI 基础设施公司转型。</p>
-            <div class="modal-source">来源：<a href="https://36kr.com" target="_blank">36氪</a> · 2026年6月3日</div>
-        </div>
+    <div class="news-grid">
+      <div class="glass news-card" onclick="openModal(3)">
+        <h4>Google 发布 Gemma 4 12B：统一无编码器多模态模型</h4>
+        <p>Google 推出 Gemma 4 12B，这是一款统一的无编码器多模态模型，支持文本、图像等多种输入，面向开发者开放使用。</p>
+        <div class="meta"><span>Google AI Blog</span><span>今日</span></div>
+      </div>
+      <div class="glass news-card" onclick="openModal(4)">
+        <h4>NVIDIA GTC June 2026：下一代 AI 芯片与算力基础设施发布</h4>
+        <p>NVIDIA 在 GTC 2026 夏季大会上发布新一代 AI 加速芯片和算力基础设施方案，进一步巩固其在 AI 训练和推理领域的领导地位。</p>
+        <div class="meta"><span>DEV Community</span><span>今日</span></div>
+      </div>
+      <div class="glass news-card" onclick="openModal(5)">
+        <h4>Gemini Omni 与 Gemini 3.5：九大演示展示多模态能力</h4>
+        <p>Google 展示了 Gemini Omni 和 Gemini 3.5 的九大应用场景演示，涵盖代码生成、图像理解、实时对话等前沿能力。</p>
+        <div class="meta"><span>Google AI Blog</span><span>今日</span></div>
+      </div>
     </div>
+  </section>
 
-    <div class="modal-overlay" id="modal4" onclick="closeModal('modal4')">
-        <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal('modal4')">×</button>
-            <span class="modal-tag">🧠 模型</span>
-            <h2>科大讯飞发布 AI 眼镜新品，腾讯 AI 产业应用大会即将召开</h2>
-            <p class="detail">科大讯飞推出全新 AI 眼镜产品，集成语音助手和实时翻译功能，支持多模态交互。与此同时，腾讯 AI 产业应用大会即将召开，预计将发布系列智能体应用新品，涵盖办公、教育、医疗等多个领域。两家巨头的动作显示 AI 硬件和应用正在加速落地。</p>
-            <div class="modal-source">来源：<a href="https://qianjia.com" target="_blank">千家网</a> · 2026年6月4日</div>
-        </div>
+  <!-- Category II: Companies -->
+  <section class="category">
+    <div class="category-header">
+      <div class="category-icon companies">🏢</div>
+      <div>
+        <div class="category-title">公司</div>
+        <div class="category-subtitle">Companies & Products</div>
+      </div>
     </div>
-
-    <div class="modal-overlay" id="modal5" onclick="closeModal('modal5')">
-        <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal('modal5')">×</button>
-            <span class="modal-tag">🧠 模型</span>
-            <h2>香港发布最新本地 AI 大模型，冀实现"Token 出海"</h2>
-            <p class="detail">香港发布最新自主研发的本地 AI 大模型，希望以此推动 AI 技术走向国际市场，实现"Token 出海"的战略目标。该模型针对中文和粤语进行了深度优化，旨在提升香港在全球 AI 版图中的地位，同时为粤港澳大湾区的数字化转型提供技术支撑。</p>
-            <div class="modal-source">来源：<a href="https://crntt.com" target="_blank">海峡飞虹中文网</a> · 2026年6月4日</div>
-        </div>
+    <div class="news-grid">
+      <div class="glass news-card" onclick="openModal(6)">
+        <h4>越过"内存墙"：AI 推理时代的晶圆级革命与算力路线</h4>
+        <p>Cerebras 凭借晶圆级芯片技术挑战英伟达，其独特的架构设计有效突破了 AI 推理中的内存带宽瓶颈，为大模型推理提供新选择。</p>
+        <div class="meta"><span>36氪 · 大蒜粒机研所</span><span>今日</span></div>
+      </div>
+      <div class="glass news-card" onclick="openModal(7)">
+        <h4>Token 不经济，经济不 Token</h4>
+        <p>深度分析 AI 模型的 Token 经济体系，探讨 Token 定价策略如何影响整个 AI 产业链的商业模式和竞争格局。</p>
+        <div class="meta"><span>36氪 · 新眸</span><span>今日</span></div>
+      </div>
+      <div class="glass news-card" onclick="openModal(8)">
+        <h4>15 句话总结姚顺雨首次公开亮相：元宝与混元的合作</h4>
+        <p>腾讯混元大模型负责人姚顺雨首次公开亮相，透露元宝与混元深度合作的最新进展，强调合作中最难的是建立信任。</p>
+        <div class="meta"><span>36氪 · 字母榜</span><span>今日</span></div>
+      </div>
     </div>
+  </section>
 
-    <div class="modal-overlay" id="modal6" onclick="closeModal('modal6')">
-        <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal('modal6')">×</button>
-            <span class="modal-tag">🧠 模型</span>
-            <h2>CVPR 2026：英伟达特斯拉 Waymo 一块听中国公司讲物理 AI</h2>
-            <p class="detail">在 CVPR 2026 计算机视觉顶级学术大会上，中国公司在物理 AI（Physical AI）领域的研究成果引发国际关注。英伟达、特斯拉和 Waymo 等国际巨头的代表共同参与讨论，展现中国 AI 研究在自动驾驶、机器人感知等方向的国际影响力持续提升。</p>
-            <div class="modal-source">来源：<a href="https://sohu.com" target="_blank">搜狐网</a> · 2026年6月4日</div>
-        </div>
+  <!-- Category III: Applications -->
+  <section class="category">
+    <div class="category-header">
+      <div class="category-icon apps">🤖</div>
+      <div>
+        <div class="category-title">应用</div>
+        <div class="category-subtitle">Agents & Applications</div>
+      </div>
     </div>
-
-    <div class="modal-overlay" id="modal7" onclick="closeModal('modal7')">
-        <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal('modal7')">×</button>
-            <span class="modal-tag">🏗️ 公司</span>
-            <h2>蓝信发布 2026 全栈 AI 新品，打造 100% 国产化政企智能办公</h2>
-            <p class="detail">蓝信推出 2026 年全栈 AI 新品，涵盖即时通讯、协同办公、智能决策三大产品线，全面落地政企办公场景。产品实现 100% 国产化，基于信创产业生态构建，推动政企数字化转型和智能办公新范式的建立。</p>
-            <div class="modal-source">来源：<a href="https://leiphone.com" target="_blank">雷峰网</a> · 2026年6月4日</div>
-        </div>
+    <div class="news-grid">
+      <div class="glass news-card" onclick="openModal(9)">
+        <h4>宇树、智元的线下门店叙事：具身智能正迈入商业周期</h4>
+        <p>国内具身智能领军企业宇树科技和智元机器人开始布局线下门店，标志着具身智能从实验室走向商业化的关键一步。</p>
+        <div class="meta"><span>36氪 · 产业家</span><span>今日</span></div>
+      </div>
+      <div class="glass news-card" onclick="openModal(10)">
+        <h4>Google 推出 Managed Agents：Gemini API 内置代理管理</h4>
+        <p>Google 在 Gemini API 中引入 Managed Agents 功能，开发者可直接调用预构建的 AI 代理完成复杂任务，降低代理应用开发门槛。</p>
+        <div class="meta"><span>Google AI Blog</span><span>今日</span></div>
+      </div>
+      <div class="glass news-card" onclick="openModal(11)">
+        <h4>从 AI 热炒到价值回报：企业如何让 AI 真正"变现"</h4>
+        <p>企业 AI 投入持续升温，但如何将技术投资转化为实际收益仍是核心挑战。专家建议精准锚定落地价值，围绕业务成果管控项目进度。</p>
+        <div class="meta"><span>36氪 · IMD</span><span>今日</span></div>
+      </div>
     </div>
+  </section>
 
-    <div class="modal-overlay" id="modal8" onclick="closeModal('modal8')">
-        <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal('modal8')">×</button>
-            <span class="modal-tag">🏗️ 公司</span>
-            <h2>英伟达全栈 AI 路线图落地，科创人工智能 ETF 盘中涨超 4.5%</h2>
-            <p class="detail">英伟达全栈 AI 路线图正式落地实施，涵盖从芯片到软件的完整 AI 基础设施解决方案。受此利好消息影响，重点布局国产 AI 产业链的科创人工智能 ETF 华宝（589520）盘中涨幅超过 4.5%，显示市场对 AI 产业链前景的强烈信心。</p>
-            <div class="modal-source">来源：<a href="https://finance.sina.com.cn" target="_blank">新浪财经</a> · 2026年6月4日</div>
-        </div>
+  <!-- Category IV: Governance -->
+  <section class="category">
+    <div class="category-header">
+      <div class="category-icon governance">⚖️</div>
+      <div>
+        <div class="category-title">治理</div>
+        <div class="category-subtitle">Safety & Governance</div>
+      </div>
     </div>
-
-    <div class="modal-overlay" id="modal9" onclick="closeModal('modal9')">
-        <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal('modal9')">×</button>
-            <span class="modal-tag">🏗️ 公司</span>
-            <h2>微信将推出 AI 智能体，腾讯人士回应</h2>
-            <p class="detail">有消息称微信正在开发一款 AI 智能体应用，将深度整合社交与 AI 能力。腾讯方面对此作出回应，确认正在探索 AI 在社交场景的应用。此举被视为腾讯在 AI 应用领域的重大布局，可能重塑移动社交的交互方式。</p>
-            <div class="modal-source">来源：<a href="https://eastmoney.com" target="_blank">东方财富</a> · 2026年6月2日</div>
-        </div>
+    <div class="news-grid">
+      <div class="glass news-card" onclick="openModal(12)">
+        <h4>AI 巨头发出警告：AI 系统正迅速进步，可能很快能够自我改进</h4>
+        <p>多家 AI 巨头联合发出警告，称 AI 系统的能力正在加速提升，未来可能具备自我改进能力，呼吁加强安全研究和监管框架建设。</p>
+        <div class="meta"><span>36氪</span><span>今日</span></div>
+      </div>
+      <div class="glass news-card" onclick="openModal(13)">
+        <h4>我的新同事，被 AI 劝走了：AI+法律的应用者悖论</h4>
+        <p>AI 在法律行业的应用引发从业者焦虑，部分初级法律工作者因 AI 工具的高效而面临职业转型压力，折射出 AI 落地中的社会影响。</p>
+        <div class="meta"><span>36氪 · 脑极体</span><span>今日</span></div>
+      </div>
+      <div class="glass news-card" onclick="openModal(14)">
+        <h4>Gemini for Science：AI 实验与工具开启科学发现新时代</h4>
+        <p>Google 推出 Gemini for Science 计划，将 AI 工具应用于科学研究，帮助科学家加速发现过程，同时引发关于 AI 在科研中角色的伦理讨论。</p>
+        <div class="meta"><span>Google AI Blog</span><span>今日</span></div>
+      </div>
     </div>
+  </section>
 
-    <div class="modal-overlay" id="modal10" onclick="closeModal('modal10')">
-        <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal('modal10')">×</button>
-            <span class="modal-tag">🏗️ 公司</span>
-            <h2>Anthropic 超越 OpenAI 成为全球最具价值 AI 初创公司</h2>
-            <p class="detail">据纽约时报报道，Anthropic 在最新一轮融资后估值超越 OpenAI，成为全球最具价值的 AI 初创企业。Anthropic 以其 Claude 系列模型和对 AI 安全的重视而闻名，此次估值跃升标志着 AI 行业竞争格局的重大变化，也反映出投资者对安全导向 AI 公司的信心增强。</p>
-            <div class="modal-source">来源：<a href="https://nytimes.com" target="_blank">纽约时报</a> · 2026年5月29日</div>
-        </div>
+  <!-- Stats -->
+  <div class="glass" style="padding:30px;margin-top:10px">
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value">8</div>
+        <div class="stat-label">追踪来源</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">24</div>
+        <div class="stat-label">候选资讯</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">15</div>
+        <div class="stat-label">晚报条目</div>
+      </div>
     </div>
+  </div>
 
-    <div class="modal-overlay" id="modal11" onclick="closeModal('modal11')">
-        <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal('modal11')">×</button>
-            <span class="modal-tag">⚡ 应用</span>
-            <h2>微软推出 Project Solara：运行 AI Agent 而非应用的新平台</h2>
-            <p class="detail">微软发布 Project Solara 平台，这是一个全新的操作系统级平台，专门用于运行 AI Agent 而非传统应用。该平台代表了人机交互范式的根本性转变，用户可以通过自然语言与 AI Agent 交互完成复杂任务，无需打开多个应用。Project Solara 已获得多家合作伙伴支持。</p>
-            <div class="modal-source">来源：<a href="https://geekwire.com" target="_blank">GeekWire</a> · 2026年6月3日</div>
-        </div>
-    </div>
+  <footer class="footer">
+    晚報 · 人工智能 · 每日精选 — Powered by Hermes Agent
+  </footer>
+</div>
 
-    <div class="modal-overlay" id="modal12" onclick="closeModal('modal12')">
-        <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal('modal12')">×</button>
-            <span class="modal-tag">⚡ 应用</span>
-            <h2>Hermes 发布官方桌面 AI Agent 应用，终结终端时代</h2>
-            <p class="detail">Nous Research 的 Hermes Agent 正式发布桌面应用版本，支持 Windows、macOS 和 Linux 全平台。应用集成 Telegram、Discord 等多平台通讯能力，提供图形化操作界面，标志着 AI Agent 从命令行工具走向大众化应用，大幅降低使用门槛。</p>
-            <div class="modal-source">来源：<a href="https://decrypt.co" target="_blank">Decrypt</a> · 2026年6月3日</div>
-        </div>
-    </div>
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <span class="tag" id="modalTag"></span>
+    <h2 id="modalTitle"></h2>
+    <div class="summary" id="modalSummary"></div>
+    <div class="source">来源：<a id="modalSource" href="#" target="_blank"></a></div>
+  </div>
+</div>
 
-    <div class="modal-overlay" id="modal13" onclick="closeModal('modal13')">
-        <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal('modal13')">×</button>
-            <span class="modal-tag">⚡ 应用</span>
-            <h2>上海"人工智能+"服务新标杆，AI 触角伸向房地产</h2>
-            <p class="detail">上海在"人工智能+"领域树立新标杆，AI 技术应用场景从传统行业延伸至房地产领域。通过 AI 驱动的智能估价、虚拟看房、智能客服等应用，推动智慧城市建设和房地产行业的数字化转型，为全国"人工智能+"落地提供示范。</p>
-            <div class="modal-source">来源：<a href="https://21jingji.com" target="_blank">21财经</a> · 2026年6月4日</div>
-        </div>
-    </div>
+<script>
+const articles=[
+  {tag:"🔥 头条",title:"Google I/O 2026：Gemini 进入代理时代，多模态能力全面升级",summary:"Google 在 I/O 2026 大会上宣布 Gemini 正式进入"代理时代"（Agentic Era）。本次发布的核心亮点包括：推出 Gemini Omni 和 Gemini 3.5 两款全新模型，支持文本、图像、代码等多模态输入；Gemini 应用升级为主动式、全天候 AI 助手，可自动规划并执行复杂任务链；引入 Managed Agents API，让开发者能够轻松构建和部署自主代理。此外，Google 还展示了九大 Gemini 应用演示，涵盖代码生成、图像理解、实时对话等前沿场景。这标志着 Google 在 AI 助手领域的战略重心从"被动响应"转向"主动代理"。",source:"Google AI Blog",url:"https://blog.google/technology/ai/"},
+  {tag:"模型",title:"Microsoft Build 2026：发布 MAI 模型家族，一口气推出七款新 AI 模型",summary:"微软在 Build 2026 开发者大会上正式发布全新 MAI（Microsoft AI）模型家族，一次性推出七款新 AI 模型，覆盖语言理解、视觉处理、代码生成等多个领域。这是微软首次以统一品牌发布自研 AI 模型产品线，标志着其在 AI 基础模型领域的重大布局。MAI 模型家族将直接集成到 Azure 云服务和 Microsoft 365 产品中，与 OpenAI 和 Google 的最新产品形成正面竞争。",source:"DEV Community",url:"https://dev.to/vjswamy"},
+  {tag:"公司",title:"OpenAI 向每家 YC 初创公司赠送 200 万美元 API 额度",summary:"OpenAI 宣布与全球顶级创业孵化器 Y Combinator 达成战略合作，为每家 YC 初创公司提供价值 200 万美元的 API 使用额度。这一举措旨在降低 AI 创业门槛，加速 AI 原生应用的孵化和成长。对于初创公司而言，这意味着可以在早期阶段无需担忧 API 成本，全力投入产品开发和市场验证。此举也被视为 OpenAI 巩固开发者生态、扩大 API 市场份额的重要策略。",source:"36氪",url:"https://www.36kr.com/information/AI/"},
+  {tag:"模型",title:"Google 发布 Gemma 4 12B：统一无编码器多模态模型",summary:"Google 正式推出 Gemma 4 12B，这是一款统一的无编码器（encoder-free）多模态模型。该模型采用创新的架构设计，无需传统的视觉编码器即可处理文本和图像等多种模态输入，在保持高性能的同时大幅简化了模型结构。Gemma 4 12B 面向开发者开放，支持本地部署和云端调用，是 Google 开源模型系列的重要更新。",source:"Google AI Blog",url:"https://blog.google/technology/ai/"},
+  {tag:"模型",title:"NVIDIA GTC June 2026：下一代 AI 芯片与算力基础设施发布",summary:"NVIDIA 在 GTC 2026 夏季大会上发布新一代 AI 加速芯片和算力基础设施方案。新芯片在训练和推理性能上均有显著提升，同时推出了面向大规模 AI 训练的集群解决方案。NVIDIA 还宣布了与多家云服务商的合作计划，进一步巩固其在 AI 算力领域的绝对领导地位。黄仁勋在主题演讲中强调，AI 正在从"工具"进化为"基础设施"。",source:"DEV Community",url:"https://dev.to/vjswamy"},
+  {tag:"模型",title:"Gemini Omni 与 Gemini 3.5：九大演示展示多模态能力",summary:"Google 在 I/O 2026 上展示了 Gemini Omni 和 Gemini 3.5 的九大应用场景演示。这些演示涵盖了代码生成与调试、图像理解与生成、实时多轮对话、文档分析、视频理解等多个前沿领域。Gemini Omni 作为全能型模型，可处理任意模态输入；Gemini 3.5 则在特定任务上达到更高精度。两款模型的发布标志着多模态 AI 进入新阶段。",source:"Google AI Blog",url:"https://blog.google/technology/ai/"},
+  {tag:"公司",title:"越过"内存墙"：AI 推理时代的晶圆级革命与算力路线",summary:"Cerebras 凭借其独特的晶圆级芯片（WSE）技术挑战英伟达在 AI 推理市场的主导地位。传统 GPU 架构在大模型推理中面临严重的内存带宽瓶颈，而 Cerebras 的晶圆级设计将计算和存储集成在单块晶圆上，有效突破了这一限制。文章深入分析了 AI 推理时代的算力需求变化，以及不同技术路线的竞争格局。",source:"36氪 · 大蒜粒机研所",url:"https://www.36kr.com/information/AI/"},
+  {tag:"公司",title:"Token 不经济，经济不 Token",summary:"深度分析 AI 模型的 Token 经济体系及其对整个产业链的影响。文章探讨了 Token 定价策略如何塑造 AI 服务的商业模式，从 API 调用计费到订阅制的演变，以及不同厂商之间的价格战对行业格局的影响。Token 作为 AI 时代的"通货"，其经济逻辑正在重新定义软件和服务的价值链条。",source:"36氪 · 新眸",url:"https://www.36kr.com/information/AI/"},
+  {tag:"公司",title:"15 句话总结姚顺雨首次公开亮相：元宝与混元的合作",summary:"腾讯混元大模型负责人姚顺雨首次在公开场合亮相，分享了腾讯在大模型领域的战略思考。他透露腾讯元宝与混元正在进行深度合作，但强调"合作中最难的是建立信任"。姚顺雨还谈到了腾讯在 AI Agent、多模态理解等方面的最新进展，以及对未来 AI 竞争格局的判断。",source:"36氪 · 字母榜",url:"https://www.36kr.com/information/AI/"},
+  {tag:"应用",title:"宇树、智元的线下门店叙事：具身智能正迈入商业周期",summary:"国内具身智能领军企业宇树科技和智元机器人开始布局线下门店，标志着具身智能从实验室走向商业化的关键一步。宇树的四足机器人和智元的人形机器人正在通过线下体验店让消费者直接接触和了解具身智能产品。这一趋势表明，具身智能正在从技术验证阶段迈入商业落地周期。",source:"36氪 · 产业家",url:"https://www.36kr.com/information/AI/"},
+  {tag:"应用",title:"Google 推出 Managed Agents：Gemini API 内置代理管理",summary:"Google 在 Gemini API 中正式引入 Managed Agents 功能，为开发者提供开箱即用的 AI 代理管理能力。开发者无需从零构建代理框架，可直接调用预构建的 AI 代理完成信息检索、数据分析、内容生成等复杂任务。这一功能大幅降低了 AI 代理应用的开发门槛，有望加速代理式 AI 的普及。",source:"Google AI Blog",url:"https://blog.google/technology/ai/"},
+  {tag:"应用",title:"从 AI 热炒到价值回报：企业如何让 AI 真正"变现"",summary:"企业 AI 投入持续升温，但如何将技术投资转化为实际商业收益仍是核心挑战。专家建议企业应精准锚定 AI 落地的实际价值点，建立可靠的数据统计规则来衡量 AI 效果，并围绕实际业务成果严格管控项目进度。文章指出，成功的 AI 转型不是技术问题，而是组织和管理问题。",source:"36氪 · IMD",url:"https://www.36kr.com/information/AI/"},
+  {tag:"治理",title:"AI 巨头发出警告：AI 系统正迅速进步，可能很快能够自我改进",summary:"多家 AI 巨头联合发出警告，称 AI 系统的能力正在加速提升，未来可能具备自我改进能力。这一声明引发了关于 AI 安全的广泛讨论。专家呼吁加强 AI 安全研究投入，建立健全的监管框架，确保 AI 发展在可控范围内进行。这是业界对 AI 快速发展发出的最新安全警示。",source:"36氪",url:"https://www.36kr.com/information/AI/"},
+  {tag:"治理",title:"我的新同事，被 AI 劝走了：AI+法律的应用者悖论",summary:"AI 在法律行业的应用正在引发从业者的职业焦虑。部分初级法律工作者因 AI 工具展现出的高效文档审查、案例检索和合同分析能力而面临转型压力。文章通过真实案例揭示了 AI 落地中的"应用者悖论"——AI 本应辅助人类工作，但在某些场景下却成为了替代者，折射出 AI 对就业市场的深层影响。",source:"36氪 · 脑极体",url:"https://www.36kr.com/information/AI/"},
+  {tag:"治理",title:"Gemini for Science：AI 实验与工具开启科学发现新时代",summary:"Google 推出 Gemini for Science 计划，将 AI 工具系统性地应用于科学研究领域。该计划提供一系列 AI 实验工具，帮助科学家在药物发现、材料科学、气候建模等领域加速研究进程。同时，AI 在科研中的角色也引发了关于研究伦理、数据隐私和学术诚信的广泛讨论。",source:"Google AI Blog",url:"https://blog.google/technology/ai/"}
+];
 
-    <div class="modal-overlay" id="modal14" onclick="closeModal('modal14')">
-        <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal('modal14')">×</button>
-            <span class="modal-tag">🛡️ 治理</span>
-            <h2>罗马教皇发布首部 AI 通谕：全球人工智能治理的文明叙事</h2>
-            <p class="detail">罗马教皇发布历史上首部关于人工智能的通谕文件，从文明叙事和伦理向度探讨全球 AI 治理问题。通谕呼吁国际社会共同关注 AI 发展中的伦理挑战，强调技术发展应服务于人类尊严和共同福祉，为全球 AI 治理提供了独特的宗教和伦理视角。</p>
-            <div class="modal-source">来源：<a href="https://fddi.fudan.edu.cn" target="_blank">复旦发展研究院</a> · 2026年6月4日</div>
-        </div>
-    </div>
-
-    <div class="modal-overlay" id="modal15" onclick="closeModal('modal15')">
-        <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal('modal15')">×</button>
-            <span class="modal-tag">🛡️ 治理</span>
-            <h2>《人工智能应用伦理安全指引 1.0》深度解读</h2>
-            <p class="detail">《山海夜话》第 4 期节目深度解读《人工智能应用伦理安全指引 1.0》，探讨如何确保 AI 应用向善发展。该指引从数据安全、算法公平、隐私保护等多个维度为行业提供伦理安全实践指南，是中国 AI 治理体系建设的重要组成部分。</p>
-            <div class="modal-source">来源：<a href="https://baai.ac.cn" target="_blank">智源社区</a> · 2026年6月4日</div>
-        </div>
-    </div>
-
-    <script>
-        function openModal(id) {
-            document.getElementById(id).classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        // Close modal on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.modal-overlay.active').forEach(function(modal) {
-                    modal.classList.remove('active');
-                });
-                document.body.style.overflow = '';
-            }
-        });
-    </script>
+function openModal(i){
+  const a=articles[i];
+  document.getElementById('modalTag').textContent=a.tag;
+  document.getElementById('modalTitle').textContent=a.title;
+  document.getElementById('modalSummary').textContent=a.summary;
+  document.getElementById('modalSource').textContent=a.source;
+  document.getElementById('modalSource').href=a.url;
+  document.getElementById('modalOverlay').classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeModal(e){
+  if(e&&e.target!==document.getElementById('modalOverlay'))return;
+  document.getElementById('modalOverlay').classList.remove('active');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
 </body>
 </html>
